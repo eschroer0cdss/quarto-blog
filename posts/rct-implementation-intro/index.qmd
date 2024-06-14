@@ -16,7 +16,7 @@ date-format: medium
 title-block-banner: true
 engine: knitr 
 
-categories: [analysis] [R] [RCTs] [Causal Inference]
+categories: [analysis, R, RCTs, Causal Inference]
 ---
 
 ## Background

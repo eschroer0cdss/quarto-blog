@@ -1,0 +1,454 @@
+---
+title: "DRAFT Implementation Guidance: RCT Randomization & Outreach"
+author: "Eric Schroer"
+format: 
+  html:
+    theme: minty 
+    code-tools: true
+    code-fold: true
+    code-link: true
+    highlight-style: github 
+    toc: true
+    
+date: today
+date-format: medium
+
+title-block-banner: true
+engine: knitr 
+---
+
+## Background
+
+The following covers how to implement aspects of RCT randomization projects, both pre- and post- demonstration. Guidance includes power analysis, randomization, sensitivity tests, and testing for attrition. Cluster and stratification randomization methods are covered.
+
+This does not cover statistical concepts in detail nor how to conduct an RCT from start to finish, though this references some resources that do so.
+
+## Pre-Intervention
+
+### **Creating an Outreach & Analysis Plan**
+
+RCT outreach projects should at minimum clearly identify the following from the outset:
+
+*Analysis*
+
+1.  Research questions and hypothesis
+
+2.  Study population
+
+3.  Randomization procedure
+
+4.  Outcomes
+
+5.  Power analysis
+
+6.  *Optional:* Sensitivity Analysis &/or exploratory analysis
+
+*Outreach*
+
+1.  Stakeholder engagement plan
+
+2.  Outreach timing and volume
+
+3.  Outreach content (if applicable)
+
+Despite covering power analysis, randomization procedure, and other sensitivity tests, this guidance is not a detailed how-to guide for analysis & outreach plans. For more guidance on analysis & outreach plans see the EBT PIN Change Outreach Plan example.
+
+### Implementing Power Analysis in R
+
+Power analysis is needed in the early stage of your analysis plan to ensure you have an adequately sized study. If your study has a pre-determined sample size power analysis can be used to determine the minimum detectable effect (MDE) needed to reject your null hypothesis.
+
+This can be straightforward if you have a binary outcome variable and can determine the proportion of your sample with the outcome of interest at baseline or pre-demonstration. If you can't determine the proportion with the outcome of interest at baseline you can use comparable estimates or finding in related literature. See Appendix for more details.
+
+*Estimating MDE (with proportions & fixed sample size)*
+
+The first step is calculating the basline incidence by joining your sample to the baseline outcome data. For example, if your outcome of interest is participation in a workforce program and your experiment will nudge people to sign up for that program via text, you can join your sample to current program participation rates at baseline.
+
+The percentage participating at baseline will be used to estimate the MDE given your sample size. Use the baseline percentage as your outcome incidence in your control group, or *p1* in the following *power.prop.test*:
+
+```{r}
+#| label: power-prop-sample
+#| warning: false
+library(pwr) 
+
+power.prop.test(n = 114000, #sample size per group
+                p1 = .028, # your calculated rate of outcome at baseline
+              # p2 = what you're solving for, difference of this & P1 ==  MDE
+                power = 0.8, #standard spec. to avoid false negative is .8
+                alternative = "two.sided")  #two sided test is default
+
+
+```
+
+You determine MDE by taking the difference of p2 (computed by *power.prop.test*) & p1 (you provided). In this case, the MDE is roughly .19 pp change.
+
+If you have multiple research questions, you may need to calculate power for each questions. See the Power Analysis section of the EBT PIN Change Outreach Planning for an example.
+
+If you need to rely on the literature to determine the likely prevalence of your outcome of interest at baseline, see the *Appendix*.
+
+Likewise, see the *Appendix* for more information on how to use an expected effect size to estimate the needed sample size - this is useful if your sample size is not predetermined and you have reason to believe your experiment will produce a similar effect to comparable literature.
+
+For conceptual guidance, see J-PAL's guidance, [particularly the definitions and Table 1](https://www.povertyactionlab.org/resource/power-calculations). On [Github](https://github.com/J-PAL/Sample_Size_and_Power) J-PAL also has R and STATA functions to calculate minimum sample size needed given a Minimum Detectable Effect using simulation.
+
+### **Implementing Randomization Procedures in R**
+
+Once you have your sample size and your finalized experimental design, you can implement randomization. If your experiment involved randomizing SNAP participating adults to receive outreach nudging enrollment in enhanced work supports, your design might be compatible with simple randomization:
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: creating-sample
+library(tidyverse)
+library(ggplot2)
+library(randomizr)
+library(modelsummary)
+library(kableExtra)
+
+
+set.seed(15)        #setting seed for reproducibility 
+
+df <- data.frame(
+      individual_id = paste0("p_", 1:1000), #unique ind ID for every working age adult
+      case_id = ifelse(rbinom(1000, 1, .8) == 1,  #80% chance of assigning caseid to a given row
+                        paste0("c_", 1:1000),
+                        NA_character_)
+)
+
+df$language <- ifelse(!is.na(df$case_id), #varying probability of assigning one of four languages Only if case_id not null
+                      sample(c("English", "Spanish", "Mandarin", "Russian"), 1000,
+                               prob = c(.5, .4, .07, .03), replace = TRUE),
+                      NA_character_)
+
+df$county_code <- ifelse(!is.na(df$case_id),
+                        sample(1:58, 1000,
+                               replace = TRUE),
+                      NA_integer_)
+
+df <- df %>% 
+  fill(c(case_id, language, county_code)) #filling NULL case id and language variables with the previous non-NULL value
+                             #effectively assigning multiple people to a given case and giving them all same language
+
+N = nrow(df)
+N_families = n_distinct(df$case_id)
+
+# creating dummy active at outcome measurement
+df$active <- sample(c(0, 1),
+                    size = N,
+                    prob = c(.12, .88),
+                    replace = T) 
+
+# defining active cases as those with at least 1 active person
+df <- df %>% 
+  group_by(case_id) %>% 
+  mutate(active_case = if_else(sum(active) >= 1, 
+                               1,
+                               0 )
+  ) 
+
+
+outcome_df <- df[2] %>% 
+  distinct() %>% 
+  mutate(baseline_occurrence = sample(0:1, 
+                                      n_distinct(case_id),
+                                      replace = TRUE
+                                      )
+  )
+
+```
+
+-   **Simple Randomization:** Once you've generated your sample dataframe with one row per observation you are randomizing--in this case adults, there are several ways to implement a simple randomization but *always set your seed for reproducibility!*
+
+```{r}
+#| label: simple-rct
+# Simple Randomization
+N = nrow(df)
+
+
+set.seed(15)        #s etting seed for reproducibility 
+
+df$demonstration <- sample(c(0, 1), # 0 as control, 1 as demonstration 
+                           size = N, # number of samples to take
+                           prob = c(.5, .5), # probability for each group
+                           replace = T) # sampling from c(0, 1) with replacement
+
+
+
+```
+
+-   **Cluster Randomization:** Effects can 'spillover' and one way to account for this is to randomize at a cluster-level. You may also be providing an intervention that could have an impact on the cluster and not just individual observation.
+
+    -   For example, you might think that telling one parent, caretaker or adult about the enhanced SNAP work support could increase the likelihood other adults in the family enroll. In that case you may want to randomize at the case level to eliminate within-case spillover effects.
+
+```{r}
+#| label: case-randomization  
+
+# Case/Clustered Randomization
+
+set.seed(15)        #setting seed for reproducibility 
+
+df <- df %>% 
+  group_by(case_id) %>% 
+  mutate(demonstration = sample(c(0, 1),  #0 as control, 1 as demonstration group
+                                1,  #number of items to choose for the entire case_id group
+                           c(.5, .5), #probability for each group
+                           replace = T)) %>%  #sampling from c(0, 1) with replacement 
+ungroup()
+```
+
+-   **Blocked Randomization in Stratified Sample:** Stratifying randomizes subgroups separately to ensure equal representation across demonstration and control among each subgroup.
+
+    -   Primary language is an example of a stratifying variable you could consider, especially for smaller sub-groups with a primary language other than English or Spanish. Here the package [*randomizr*](https://declaredesign.org/r/randomizr/) is helpful. It can be used to stratify at the case level too.
+
+```{r}
+#| label: stratified-case-randomization
+#| warnings: false
+
+# Stratified Case/Clustered Randomization
+
+#install.packages("randomizr")
+#library(randomizr)
+
+set.seed(15)        #setting seed for reproducibility 
+
+df <- df %>% 
+  group_by(case_id) %>% 
+  mutate(
+    cluster_size = n(), #total adults per case
+    strata = language # if stratifying on mult vars this could be paste0(var1, "_", language/var2)
+)
+
+df$demonstration <- randomizr::block_and_cluster_ra(clusters = df$case_id,
+                                         blocks = df$strata, #your stratification or block variable
+                                         prob_each = c(.5, .5), # adjust as needed for treatment balance
+                                         conditions = c("demonstration", "control") #assigned value
+)
+
+```
+
+-   **Multiple Treatment Arms:** Your outreach experiment may also include multiple versions of the message content to test which communication messages are most effective. If that was the case, you could easily adapt the block and cluster randomization arguments as follows:
+
+```{r}
+#| label: strat-case-two_messages
+#| warnings: false
+#Two Versions of Outreach Messages
+set.seed(15)        #setting seed for reproducibility 
+
+df <- df %>% 
+  group_by(case_id) %>% 
+  mutate(
+    cluster_size = n(), 
+    strata = language 
+)
+
+df$demonstration <- randomizr::block_and_cluster_ra(clusters = df$case_id,
+                                         blocks = df$strata,
+                                         prob_each = c(.5/2, #message group 1
+                                                       .5/2, #message group 2
+                                                       .5), # adjust as needed for treatment balance
+                                         conditions = c("message_vers_one", #assigned value 1
+                                                        "message_vers_two", #assigned value 2
+                                                        "control")          #assigned value 3
+)
+
+```
+
+-   **Phase-in** or **Step-wedge**: If you are providing the demonstration to *everyone* but staggering the timing by which the control group receives the demonstration or treatment, you would follow the exact *block_and_cluster_ra* function as above.
+
+    -   See \\\\Cdss6psas2\\RADD\\Fraud\\Projects\\PIN Change Outreach Experiment\\code\\04_Sample_Randomization.R for an example of multiple treatment arm phased in *block_and_cluster_ra* script
+
+    -   See Joaquin's brown bag presentation on causal inference for more background on this design.
+
+### Balance Testing
+
+After randomizing the data but pre-intervention, it is essential to balance test across key variables. This ensures they are equally represented across demonstration groups.
+
+For instance, if by chance you have more people already participating in the enhanced work supports in your control group at baseline, this could impact the validity of the analysis and might warrant setting a new seed and randomizing again until outcomes and control variables are more equally represented across groups.
+
+#### nnet & stargazer
+
+This can be done with two packages in R, *nnet* to create a linear regression model and *stargazer* to present the information and a table. The end of the below code chunk also includes commented function to save the stargazer results for later review:
+
+```{r}
+#| label: balance-testing
+#| warning: false
+
+#install.packages("nnet", "stargazer")
+library(nnet)
+library(stargazer)
+
+#Creating Sample + Baseline Outcome Dataset
+sample_baseline_df <- df %>% 
+  left_join(outcome_df,
+            by = "case_id") %>% 
+  group_by(case_id) %>% 
+  slice(1) # selecting one row per case because sample is clustered
+
+outcome_language_balance <- multinom(
+    demonstration ~ baseline_occurrence + language, 
+    data = sample_baseline_df,
+    trace = FALSE ) # preventing multinom from printing weights 
+
+
+# stargazer_language_balance <- stargazer(outcome_language_balance,
+#                                       type = "text")  #commented out to suppress printing
+
+
+#Saving File with Seed Number in Title
+#write.table(outcome_language_balance, 
+#            paste0("stargazer outputs/seed 15_",
+#            "Block_Cluster_Balance_Test.txt"))
+
+# Returning Stargazer Output with more labels & formatting
+
+stargazer(outcome_language_balance,  
+          type = "text",
+          title = "Baseline Testing of Demonstration Groups",
+          style = "aer", # you can set styles of output to resemble academic journal
+          omit.stat = "aic",  # argument for ommitting certain statistic codes
+          covariate.labels = c( # covariate/row labels
+                       "Baseline Occurrence",
+                       "Language: Mandarin",
+                       "Language: Russian",
+                       "Language: Spanish",
+                       "Constant"),
+          notes = "Comparison group is message version one, language: English" #notes at bottom
+)
+```
+
+Coefficients are on top and standard errors are below in parenthesis. The statistically significant *constant* in the control group simply reflects how the control group is twice as large as the other two groups; this is because our the demonstration group is by design split into a message version one and message version two at 25% of the total sample.
+
+In our dummy data, there are no statistically significant differences in observable characteristics between the groups.
+
+## **Post-Intervention**
+
+### Measuring Attrition
+
+Sample observations may 'drop out' before you're able to measure outcomes of interest. One way this could happen is if a portion of your sample is on your caseload at the time of sampling and even messaging, but exits the program by the time you measure outcomes.
+
+Attrition can impact the study validity or statistical power. It may also reflect an underlying bias on observed or unobserved variables where certain sub-groups systematically drop off more frequently than others. Consequently, it's important to check for *overall attrition* and *differential attrition.*
+
+To continue with the example of messaging for enhanced work supports for CalFresh families, attrition would be measured by the proportion of families still on the caseload before the completion of the outcome measurement period. The package *kableExtra* can be used for cleaner summary tables:
+
+```{r}
+#| label: overall-attrition
+#| tbl-cap: "Overall Attrition Rates"
+
+#install.packages("kableExtra")
+#library(kableExtra)
+
+N_families = n_distinct(df$case_id)
+
+# creating attrition table by treatment
+df %>% 
+  group_by(active_case) %>% 
+  summarize(`N families` = n_distinct(case_id),
+            `% of total sample` = round((`N families`/N_families)*100, 1),
+            .groups = 'keep') %>% 
+  mutate(active_case = ifelse(active_case == 1, 'Yes', 'No')) %>% 
+  rename(`Active Case`= active_case) %>% 
+  kbl %>% 
+  kable_minimal(position='center',full_width=F, fixed_thead=T, bootstrap_options='hover')
+
+
+```
+
+When looking at differential attrition, use an OLS multivariate regression or ordinary least-squares model to determine whether any particular variable has a meaningful relationship with attrition. The package *modelsummary* can be used for cleaner presentation of OLS models:
+
+```{r}
+#| label: differential-attrition
+#| tbl-cap: "Differential Attrition by Treatment & Language"
+#install.packages("modelsummary")
+#library(modelsummary)
+
+# Only looking at case level
+df_cases <- df %>% 
+  distinct(case_id, .keep_all = TRUE)
+
+# Creating Model
+attrit_model = lm(active_case ~ demonstration + language, data = df_cases)
+
+# Presenting Model using Model Summary
+modelsummary(list('Active Case (pp)'=attrit_model),
+             stars=T, # significance stars
+             fmt = function(x)round(x*100,2), # formatting both coefficients & standard errors to appear as percents
+             coef_map = c(
+               "demonstrationmessage_vers_two" = "Message Version Two",
+               "demonstrationcontrol" = "Control",
+               "languageMandarin" = "Language: Mandarin",
+               "languageRussian" = "Language: Russian", 
+               "languageSpanish" = "Language: Spanish",
+               "(Intercept)" = "Intercept"),
+             statistic = 'Std.Error: ({std.error})',
+             output = 'kableExtra',
+             gof_omit = 'AIC|BIC|F|Log.Lik.|Std.Errors') %>% 
+  footnote(general = 'Reference group is demonstration version one, language: english. Coefficients and std.errors multiplied by 100 and presented as percents') %>% 
+  kable_minimal() %>% 
+  row_spec(seq(1,12,2), bold=T, background = '#ffffbf')
+
+```
+
+In our dummy data, there are no differential rates of attrition. The experiment would be ready to carry out the analysis related to essential research questions.
+
+## Appendix
+
+### RCTs: Very Brief Review of Concepts
+
+#### Counterfactuals & Causality
+
+The power of an Randomized Control Trial (RCT) is that in theory systematic differences across the demonstration and control groups, whether observed in administrative data or unknown, will be equally represented across groups at a given time. The results for your demonstration group would not fully generalize to your control group.
+
+For more resources:
+
+-   Joaquin's brown bag presentation for a brief overview of counterfactuals, causality, and selection bias
+
+-   While focused on observational data & matching, the '[Crash course in potential outcomes](despite%20the%20post%20focus%20on%20observational%20matching)' section in [Andrew Heiss' post](https://www.andrewheiss.com/blog/2024/03/21/demystifying-ate-att-atu/#ref-MorganWinship:2014) covers individual & average effects and selection bias.
+
+-   J-PAL has more extensive resources on the entire project lifecycle for [randomized evaluations](https://www.povertyactionlab.org/resource/introduction-randomized-evaluations)
+
+#### 'Nudging' Through Outreach
+
+RCTs where the demonstration group is texted or emailed to secure their accounts or apply for a program are nudges because they present a simple, predictable choice without introducing any new incentive - the benefits of securing their account or enrolling in CalFresh were already available to them.
+
+For more resources:
+
+-   [A meta-analysis](https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA18709) of RCT nudges experiments across public agency produced and academic literature, and a comparison between these two types of research
+
+-   The federal [Office of Evaluation Sciences](https://oes.gsa.gov/work/) includes analysis plan registrations and results for cross disciplinary research. Methods used can include RCTs with or without outreach nudges and quasi-experimental methodologies.
+
+### Power Analysis: Other Methods
+
+*Estimating Sample Size*
+
+If using a power analysis to estimate how large your sample should be, the main variable you need to estimate is *Cohen's d*, or the mean difference between groups divided by pooled standard deviation.
+
+Two options for this are relying on pilots or published literature. When it comes to nudge RCTs, we have both.
+
+-   *Relying on Literature*
+
+    -   [RCTs to Scale: Comprehensive Evidence From Two Nudge Units (wiley.com)](https://onlinelibrary.wiley.com/doi/epdf/10.3982/ECTA18709) conducts a meta-analysis of over 120 governmental 'nudge' RCTs, finding an unweighted impact of 0.014 (1.4%), a standard error of 0.3, and an average control group take-up of 17.3%.
+
+-   *In House Pilot Evaluations*
+
+    -   The mean impact of messages on PIN Change via the EBT PIN change experiment was .01 (1%), pooled standard deviation was .107, and the rate of PIN change in the control group was .0027 (.27%).
+        -   Depending on your experiment, you may want to use the mean impact and deviation of messages on theft.
+
+Using this information and the *pwr* library, we could calculate sample size needed as follows:
+
+```{r}
+
+#| label: power-calc-est-sample
+#| warning: false
+
+library(pwr) 
+
+power.prop.test(#n = 114000, #solving for this
+                p1 = 0.173, # literature avg. control take-up
+                p2 = 0.187, # control + lit avg. impact 
+                power = 0.8, #standard spec. to avoid false negative is .8
+                alternative = "two.sided")  #two sided test is default
+
+
+```
+
+The above example uses the meta analyses figures and determines you need at least 11,821 observations in *each group*. If you wanted to use your pilot study or did not have a reliable estimate from the literature, you would change p1 and p2 accordingly.
+
+For conceptual guidance, see J-PAL's guidance, [particularly the definitions and Table 1](https://www.povertyactionlab.org/resource/power-calculations). On [Github](https://github.com/J-PAL/Sample_Size_and_Power) J-PAL also has R and STATA functions to calculate minimum sample size needed given a Minimum Detectable Effect using simulation.

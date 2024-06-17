@@ -176,7 +176,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Jun 14, 2024</p>
+        <p class="date">Jun 17, 2024</p>
       </div>
     </div>
     
@@ -220,6 +220,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <main class="content quarto-banner-title-block" id="quarto-document-content"><section id="background" class="level2"><h2 class="anchored" data-anchor-id="background">Background</h2>
 <p>The following covers how to implement aspects of RCT randomization projects, both pre- and post- demonstration. Guidance includes power analysis, randomization, sensitivity tests, and testing for attrition. Cluster and stratification randomization methods are covered.</p>
 <p>This does not cover statistical concepts in detail nor how to conduct an RCT from start to finish, though this references some resources that do so.</p>
+<p><strong><em>This version removes any drive folders or SharePoint links, only posting dummy data, dummy code, and publicly available resources</em></strong>.</p>
 </section><section id="pre-intervention" class="level2"><h2 class="anchored" data-anchor-id="pre-intervention">Pre-Intervention</h2>
 <section id="creating-an-outreach-analysis-plan" class="level3"><h3 class="anchored" data-anchor-id="creating-an-outreach-analysis-plan"><strong>Creating an Outreach &amp; Analysis Plan</strong></h3>
 <p>RCT outreach projects should at minimum clearly identify the following from the outset:</p>
@@ -238,7 +239,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Outreach timing and volume</p></li>
 <li><p>Outreach content (if applicable)</p></li>
 </ol>
-<p>Despite covering power analysis, randomization procedure, and other sensitivity tests, this guidance is not a detailed how-to guide for analysis &amp; outreach plans. For more guidance on analysis &amp; outreach plans see the EBT PIN Change Outreach Plan example.</p>
+<p>Despite covering power analysis, randomization procedure, and other sensitivity tests, this guidance is not a detailed how-to guide for analysis &amp; outreach plans. For more guidance on analysis &amp; outreach plans see the [<em>removed]</em>.</p>
 </section><section id="implementing-power-analysis-in-r" class="level3"><h3 class="anchored" data-anchor-id="implementing-power-analysis-in-r">Implementing Power Analysis in R</h3>
 <p>Power analysis is needed in the early stage of your analysis plan to ensure you have an adequately sized study. If your study has a pre-determined sample size power analysis can be used to determine the minimum detectable effect (MDE) needed to reject your null hypothesis.</p>
 <p>This can be straightforward if you have a binary outcome variable and can determine the proportion of your sample with the outcome of interest at baseline or pre-demonstration. If you can’t determine the proportion with the outcome of interest at baseline you can use comparable estimates or finding in related literature. See Appendix for more details.</p>
@@ -268,7 +269,7 @@ NOTE: n is number in *each* group</code></pre>
 </div>
 </div>
 <p>You determine MDE by taking the difference of p2 (computed by <em>power.prop.test</em>) &amp; p1 (you provided). In this case, the MDE is roughly .19 pp change.</p>
-<p>If you have multiple research questions, you may need to calculate power for each questions. See the Power Analysis section of the EBT PIN Change Outreach Planning for an example.</p>
+<p>If you have multiple research questions, you may need to calculate power for each questions. See the Power Analysis section of the [<em>removed]</em>.</p>
 <p>If you need to rely on the literature to determine the likely prevalence of your outcome of interest at baseline, see the <em>Appendix</em>.</p>
 <p>Likewise, see the <em>Appendix</em> for more information on how to use an expected effect size to estimate the needed sample size - this is useful if your sample size is not predetermined and you have reason to believe your experiment will produce a similar effect to comparable literature.</p>
 <p>For conceptual guidance, see J-PAL’s guidance, <a href="https://www.povertyactionlab.org/resource/power-calculations">particularly the definitions and Table 1</a>. On <a href="https://github.com/J-PAL/Sample_Size_and_Power">Github</a> J-PAL also has R and STATA functions to calculate minimum sample size needed given a Minimum Detectable Effect using simulation.</p>
@@ -377,8 +378,8 @@ NOTE: n is number in *each* group</code></pre>
 <li>
 <p><strong>Phase-in</strong> or <strong>Step-wedge</strong>: If you are providing the demonstration to <em>everyone</em> but staggering the timing by which the control group receives the demonstration or treatment, you would follow the exact <em>block_and_cluster_ra</em> function as above.</p>
 <ul>
-<li><p>See \\Cdss6psas2\RADD\Fraud\Projects\PIN Change Outreach Experiment\code\04_Sample_Randomization.R for an example of multiple treatment arm phased in <em>block_and_cluster_ra</em> script</p></li>
-<li><p>See Joaquin’s brown bag presentation on causal inference for more background on this design.</p></li>
+<li><p>See [<em>removed]</em> for an example of multiple treatment arm phased in <em>block_and_cluster_ra</em> script</p></li>
+<li><p>See [<em>removed]</em> on causal inference for more background on this design.</p></li>
 </ul>
 </li>
 </ul></section><section id="balance-testing" class="level3"><h3 class="anchored" data-anchor-id="balance-testing">Balance Testing</h3>
@@ -624,7 +625,7 @@ Notes:              ***Significant at the 1 percent level.
 <p>The power of an Randomized Control Trial (RCT) is that in theory systematic differences across the demonstration and control groups, whether observed in administrative data or unknown, will be equally represented across groups at a given time. The results for your demonstration group would not fully generalize to your control group.</p>
 <p>For more resources:</p>
 <ul>
-<li><p>Joaquin’s brown bag presentation for a brief overview of counterfactuals, causality, and selection bias</p></li>
+<li><p>[<em>removed]</em> for a brief overview of counterfactuals, causality, and selection bias</p></li>
 <li><p>While focused on observational data &amp; matching, the ‘<a href="despite the post focus on observational matching">Crash course in potential outcomes</a>’ section in <a href="https://www.andrewheiss.com/blog/2024/03/21/demystifying-ate-att-atu/#ref-MorganWinship:2014">Andrew Heiss’ post</a> covers individual &amp; average effects and selection bias.</p></li>
 <li><p>J-PAL has more extensive resources on the entire project lifecycle for <a href="https://www.povertyactionlab.org/resource/introduction-randomized-evaluations">randomized evaluations</a></p></li>
 </ul></section><section id="nudging-through-outreach" class="level4"><h4 class="anchored" data-anchor-id="nudging-through-outreach">‘Nudging’ Through Outreach</h4>
@@ -899,434 +900,436 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>This does not cover statistical concepts in detail nor how to conduct an RCT from start to finish, though this references some resources that do so.</span>
 <span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Pre-Intervention</span></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>***This version removes any drive folders or SharePoint links, only posting dummy data, dummy code, and publicly available resources***.</span>
 <span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Creating an Outreach &amp; Analysis Plan**</span></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Pre-Intervention</span></span>
 <span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>RCT outreach projects should at minimum clearly identify the following from the outset:</span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Creating an Outreach &amp; Analysis Plan**</span></span>
 <span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>*Analysis*</span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>RCT outreach projects should at minimum clearly identify the following from the outset:</span>
 <span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Research questions and hypothesis</span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>*Analysis*</span>
 <span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Study population</span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Research questions and hypothesis</span>
 <span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Randomization procedure</span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Study population</span>
 <span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Outcomes</span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Randomization procedure</span>
 <span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>Power analysis</span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Outcomes</span>
 <span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span>*Optional:* Sensitivity Analysis &amp;/or exploratory analysis</span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>Power analysis</span>
 <span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>*Outreach*</span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span>*Optional:* Sensitivity Analysis &amp;/or exploratory analysis</span>
 <span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Stakeholder engagement plan</span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a>*Outreach*</span>
 <span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Outreach timing and volume</span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Stakeholder engagement plan</span>
 <span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Outreach content (if applicable)</span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Outreach timing and volume</span>
 <span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a>Despite covering power analysis, randomization procedure, and other sensitivity tests, this guidance is not a detailed how-to guide for analysis &amp; outreach plans. For more guidance on analysis &amp; outreach plans see the EBT PIN Change Outreach Plan example.</span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Outreach content (if applicable)</span>
 <span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a><span class="fu">### Implementing Power Analysis in R</span></span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a>Despite covering power analysis, randomization procedure, and other sensitivity tests, this guidance is not a detailed how-to guide for analysis &amp; outreach plans. For more guidance on analysis &amp; outreach plans see the <span class="sc">\[</span>*removed\]*.</span>
 <span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a>Power analysis is needed in the early stage of your analysis plan to ensure you have an adequately sized study. If your study has a pre-determined sample size power analysis can be used to determine the minimum detectable effect (MDE) needed to reject your null hypothesis.</span>
+<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a><span class="fu">### Implementing Power Analysis in R</span></span>
 <span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a>This can be straightforward if you have a binary outcome variable and can determine the proportion of your sample with the outcome of interest at baseline or pre-demonstration. If you can't determine the proportion with the outcome of interest at baseline you can use comparable estimates or finding in related literature. See Appendix for more details.</span>
+<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a>Power analysis is needed in the early stage of your analysis plan to ensure you have an adequately sized study. If your study has a pre-determined sample size power analysis can be used to determine the minimum detectable effect (MDE) needed to reject your null hypothesis.</span>
 <span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a>*Estimating MDE (with proportions &amp; fixed sample size)*</span>
+<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a>This can be straightforward if you have a binary outcome variable and can determine the proportion of your sample with the outcome of interest at baseline or pre-demonstration. If you can't determine the proportion with the outcome of interest at baseline you can use comparable estimates or finding in related literature. See Appendix for more details.</span>
 <span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a>The first step is calculating the basline incidence by joining your sample to the baseline outcome data. For example, if your outcome of interest is participation in a workforce program and your experiment will nudge people to sign up for that program via text, you can join your sample to current program participation rates at baseline.</span>
+<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a>*Estimating MDE (with proportions &amp; fixed sample size)*</span>
 <span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a>The percentage participating at baseline will be used to estimate the MDE given your sample size. Use the baseline percentage as your outcome incidence in your control group, or *p1* in the following *power.prop.test*:</span>
+<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a>The first step is calculating the basline incidence by joining your sample to the baseline outcome data. For example, if your outcome of interest is participation in a workforce program and your experiment will nudge people to sign up for that program via text, you can join your sample to current program participation rates at baseline.</span>
 <span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: power-prop-sample</span></span>
-<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb13-75"><a href="#cb13-75" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pwr) </span>
-<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a><span class="fu">power.prop.test</span>(<span class="at">n =</span> <span class="dv">114000</span>, <span class="co">#sample size per group</span></span>
-<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a>                <span class="at">p1 =</span> .<span class="dv">028</span>, <span class="co"># your calculated rate of outcome at baseline</span></span>
-<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a>              <span class="co"># p2 = what you're solving for, difference of this &amp; P1 ==  MDE</span></span>
-<span id="cb13-80"><a href="#cb13-80" aria-hidden="true" tabindex="-1"></a>                <span class="at">power =</span> <span class="fl">0.8</span>, <span class="co">#standard spec. to avoid false negative is .8</span></span>
-<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">"two.sided"</span>)  <span class="co">#two sided test is default</span></span>
-<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-83"><a href="#cb13-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a>The percentage participating at baseline will be used to estimate the MDE given your sample size. Use the baseline percentage as your outcome incidence in your control group, or *p1* in the following *power.prop.test*:</span>
+<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-75"><a href="#cb13-75" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: power-prop-sample</span></span>
+<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pwr) </span>
+<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a><span class="fu">power.prop.test</span>(<span class="at">n =</span> <span class="dv">114000</span>, <span class="co">#sample size per group</span></span>
+<span id="cb13-80"><a href="#cb13-80" aria-hidden="true" tabindex="-1"></a>                <span class="at">p1 =</span> .<span class="dv">028</span>, <span class="co"># your calculated rate of outcome at baseline</span></span>
+<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a>              <span class="co"># p2 = what you're solving for, difference of this &amp; P1 ==  MDE</span></span>
+<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a>                <span class="at">power =</span> <span class="fl">0.8</span>, <span class="co">#standard spec. to avoid false negative is .8</span></span>
+<span id="cb13-83"><a href="#cb13-83" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">"two.sided"</span>)  <span class="co">#two sided test is default</span></span>
+<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-85"><a href="#cb13-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a>You determine MDE by taking the difference of p2 (computed by *power.prop.test*) &amp; p1 (you provided). In this case, the MDE is roughly .19 pp change.</span>
+<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-88"><a href="#cb13-88" aria-hidden="true" tabindex="-1"></a>If you have multiple research questions, you may need to calculate power for each questions. See the Power Analysis section of the EBT PIN Change Outreach Planning for an example.</span>
+<span id="cb13-88"><a href="#cb13-88" aria-hidden="true" tabindex="-1"></a>You determine MDE by taking the difference of p2 (computed by *power.prop.test*) &amp; p1 (you provided). In this case, the MDE is roughly .19 pp change.</span>
 <span id="cb13-89"><a href="#cb13-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-90"><a href="#cb13-90" aria-hidden="true" tabindex="-1"></a>If you need to rely on the literature to determine the likely prevalence of your outcome of interest at baseline, see the *Appendix*.</span>
+<span id="cb13-90"><a href="#cb13-90" aria-hidden="true" tabindex="-1"></a>If you have multiple research questions, you may need to calculate power for each questions. See the Power Analysis section of the <span class="sc">\[</span>*removed\]*.</span>
 <span id="cb13-91"><a href="#cb13-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a>Likewise, see the *Appendix* for more information on how to use an expected effect size to estimate the needed sample size - this is useful if your sample size is not predetermined and you have reason to believe your experiment will produce a similar effect to comparable literature.</span>
+<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a>If you need to rely on the literature to determine the likely prevalence of your outcome of interest at baseline, see the *Appendix*.</span>
 <span id="cb13-93"><a href="#cb13-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a>For conceptual guidance, see J-PAL's guidance, <span class="co">[</span><span class="ot">particularly the definitions and Table 1</span><span class="co">](https://www.povertyactionlab.org/resource/power-calculations)</span>. On <span class="co">[</span><span class="ot">Github</span><span class="co">](https://github.com/J-PAL/Sample_Size_and_Power)</span> J-PAL also has R and STATA functions to calculate minimum sample size needed given a Minimum Detectable Effect using simulation.</span>
+<span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a>Likewise, see the *Appendix* for more information on how to use an expected effect size to estimate the needed sample size - this is useful if your sample size is not predetermined and you have reason to believe your experiment will produce a similar effect to comparable literature.</span>
 <span id="cb13-95"><a href="#cb13-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-96"><a href="#cb13-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Implementing Randomization Procedures in R**</span></span>
+<span id="cb13-96"><a href="#cb13-96" aria-hidden="true" tabindex="-1"></a>For conceptual guidance, see J-PAL's guidance, <span class="co">[</span><span class="ot">particularly the definitions and Table 1</span><span class="co">](https://www.povertyactionlab.org/resource/power-calculations)</span>. On <span class="co">[</span><span class="ot">Github</span><span class="co">](https://github.com/J-PAL/Sample_Size_and_Power)</span> J-PAL also has R and STATA functions to calculate minimum sample size needed given a Minimum Detectable Effect using simulation.</span>
 <span id="cb13-97"><a href="#cb13-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-98"><a href="#cb13-98" aria-hidden="true" tabindex="-1"></a>Once you have your sample size and your finalized experimental design, you can implement randomization. If your experiment involved randomizing SNAP participating adults to receive outreach nudging enrollment in enhanced work supports, your design might be compatible with simple randomization:</span>
+<span id="cb13-98"><a href="#cb13-98" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Implementing Randomization Procedures in R**</span></span>
 <span id="cb13-99"><a href="#cb13-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-102"><a href="#cb13-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-103"><a href="#cb13-103" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb13-104"><a href="#cb13-104" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb13-105"><a href="#cb13-105" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: creating-sample</span></span>
-<span id="cb13-106"><a href="#cb13-106" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb13-107"><a href="#cb13-107" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb13-108"><a href="#cb13-108" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(randomizr)</span>
-<span id="cb13-109"><a href="#cb13-109" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(modelsummary)</span>
-<span id="cb13-110"><a href="#cb13-110" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb13-111"><a href="#cb13-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-112"><a href="#cb13-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-113"><a href="#cb13-113" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">15</span>)        <span class="co">#setting seed for reproducibility </span></span>
+<span id="cb13-100"><a href="#cb13-100" aria-hidden="true" tabindex="-1"></a>Once you have your sample size and your finalized experimental design, you can implement randomization. If your experiment involved randomizing SNAP participating adults to receive outreach nudging enrollment in enhanced work supports, your design might be compatible with simple randomization:</span>
+<span id="cb13-101"><a href="#cb13-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-104"><a href="#cb13-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-105"><a href="#cb13-105" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb13-106"><a href="#cb13-106" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb13-107"><a href="#cb13-107" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: creating-sample</span></span>
+<span id="cb13-108"><a href="#cb13-108" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb13-109"><a href="#cb13-109" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb13-110"><a href="#cb13-110" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(randomizr)</span>
+<span id="cb13-111"><a href="#cb13-111" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(modelsummary)</span>
+<span id="cb13-112"><a href="#cb13-112" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb13-113"><a href="#cb13-113" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-114"><a href="#cb13-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-115"><a href="#cb13-115" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb13-116"><a href="#cb13-116" aria-hidden="true" tabindex="-1"></a>      <span class="at">individual_id =</span> <span class="fu">paste0</span>(<span class="st">"p_"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>), <span class="co">#unique ind ID for every working age adult</span></span>
-<span id="cb13-117"><a href="#cb13-117" aria-hidden="true" tabindex="-1"></a>      <span class="at">case_id =</span> <span class="fu">ifelse</span>(<span class="fu">rbinom</span>(<span class="dv">1000</span>, <span class="dv">1</span>, .<span class="dv">8</span>) <span class="sc">==</span> <span class="dv">1</span>,  <span class="co">#80% chance of assigning caseid to a given row</span></span>
-<span id="cb13-118"><a href="#cb13-118" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">paste0</span>(<span class="st">"c_"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>),</span>
-<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a>                        <span class="cn">NA_character_</span>)</span>
-<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>language <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="sc">!</span><span class="fu">is.na</span>(df<span class="sc">$</span>case_id), <span class="co">#varying probability of assigning one of four languages Only if case_id not null</span></span>
-<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"English"</span>, <span class="st">"Spanish"</span>, <span class="st">"Mandarin"</span>, <span class="st">"Russian"</span>), <span class="dv">1000</span>,</span>
-<span id="cb13-124"><a href="#cb13-124" aria-hidden="true" tabindex="-1"></a>                               <span class="at">prob =</span> <span class="fu">c</span>(.<span class="dv">5</span>, .<span class="dv">4</span>, .<span class="dv">07</span>, .<span class="dv">03</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb13-125"><a href="#cb13-125" aria-hidden="true" tabindex="-1"></a>                      <span class="cn">NA_character_</span>)</span>
-<span id="cb13-126"><a href="#cb13-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>county_code <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="sc">!</span><span class="fu">is.na</span>(df<span class="sc">$</span>case_id),</span>
-<span id="cb13-128"><a href="#cb13-128" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">58</span>, <span class="dv">1000</span>,</span>
-<span id="cb13-129"><a href="#cb13-129" aria-hidden="true" tabindex="-1"></a>                               <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb13-130"><a href="#cb13-130" aria-hidden="true" tabindex="-1"></a>                      <span class="cn">NA_integer_</span>)</span>
-<span id="cb13-131"><a href="#cb13-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-132"><a href="#cb13-132" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb13-133"><a href="#cb13-133" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fill</span>(<span class="fu">c</span>(case_id, language, county_code)) <span class="co">#filling NULL case id and language variables with the previous non-NULL value</span></span>
-<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a>                             <span class="co">#effectively assigning multiple people to a given case and giving them all same language</span></span>
-<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a>N <span class="ot">=</span> <span class="fu">nrow</span>(df)</span>
-<span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a>N_families <span class="ot">=</span> <span class="fu">n_distinct</span>(df<span class="sc">$</span>case_id)</span>
-<span id="cb13-138"><a href="#cb13-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-139"><a href="#cb13-139" aria-hidden="true" tabindex="-1"></a><span class="co"># creating dummy active at outcome measurement</span></span>
-<span id="cb13-140"><a href="#cb13-140" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>active <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>),</span>
-<span id="cb13-141"><a href="#cb13-141" aria-hidden="true" tabindex="-1"></a>                    <span class="at">size =</span> N,</span>
-<span id="cb13-142"><a href="#cb13-142" aria-hidden="true" tabindex="-1"></a>                    <span class="at">prob =</span> <span class="fu">c</span>(.<span class="dv">12</span>, .<span class="dv">88</span>),</span>
-<span id="cb13-143"><a href="#cb13-143" aria-hidden="true" tabindex="-1"></a>                    <span class="at">replace =</span> T) </span>
-<span id="cb13-144"><a href="#cb13-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-145"><a href="#cb13-145" aria-hidden="true" tabindex="-1"></a><span class="co"># defining active cases as those with at least 1 active person</span></span>
-<span id="cb13-146"><a href="#cb13-146" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb13-147"><a href="#cb13-147" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(case_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-148"><a href="#cb13-148" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">active_case =</span> <span class="fu">if_else</span>(<span class="fu">sum</span>(active) <span class="sc">&gt;=</span> <span class="dv">1</span>, </span>
-<span id="cb13-149"><a href="#cb13-149" aria-hidden="true" tabindex="-1"></a>                               <span class="dv">1</span>,</span>
-<span id="cb13-150"><a href="#cb13-150" aria-hidden="true" tabindex="-1"></a>                               <span class="dv">0</span> )</span>
-<span id="cb13-151"><a href="#cb13-151" aria-hidden="true" tabindex="-1"></a>  ) </span>
-<span id="cb13-152"><a href="#cb13-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-153"><a href="#cb13-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-154"><a href="#cb13-154" aria-hidden="true" tabindex="-1"></a>outcome_df <span class="ot">&lt;-</span> df[<span class="dv">2</span>] <span class="sc">%&gt;%</span> </span>
-<span id="cb13-155"><a href="#cb13-155" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb13-156"><a href="#cb13-156" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">baseline_occurrence =</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, </span>
-<span id="cb13-157"><a href="#cb13-157" aria-hidden="true" tabindex="-1"></a>                                      <span class="fu">n_distinct</span>(case_id),</span>
-<span id="cb13-158"><a href="#cb13-158" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">replace =</span> <span class="cn">TRUE</span></span>
-<span id="cb13-159"><a href="#cb13-159" aria-hidden="true" tabindex="-1"></a>                                      )</span>
-<span id="cb13-160"><a href="#cb13-160" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb13-161"><a href="#cb13-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-162"><a href="#cb13-162" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-115"><a href="#cb13-115" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">15</span>)        <span class="co">#setting seed for reproducibility </span></span>
+<span id="cb13-116"><a href="#cb13-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-117"><a href="#cb13-117" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-118"><a href="#cb13-118" aria-hidden="true" tabindex="-1"></a>      <span class="at">individual_id =</span> <span class="fu">paste0</span>(<span class="st">"p_"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>), <span class="co">#unique ind ID for every working age adult</span></span>
+<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a>      <span class="at">case_id =</span> <span class="fu">ifelse</span>(<span class="fu">rbinom</span>(<span class="dv">1000</span>, <span class="dv">1</span>, .<span class="dv">8</span>) <span class="sc">==</span> <span class="dv">1</span>,  <span class="co">#80% chance of assigning caseid to a given row</span></span>
+<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">paste0</span>(<span class="st">"c_"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>),</span>
+<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a>                        <span class="cn">NA_character_</span>)</span>
+<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-124"><a href="#cb13-124" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>language <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="sc">!</span><span class="fu">is.na</span>(df<span class="sc">$</span>case_id), <span class="co">#varying probability of assigning one of four languages Only if case_id not null</span></span>
+<span id="cb13-125"><a href="#cb13-125" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"English"</span>, <span class="st">"Spanish"</span>, <span class="st">"Mandarin"</span>, <span class="st">"Russian"</span>), <span class="dv">1000</span>,</span>
+<span id="cb13-126"><a href="#cb13-126" aria-hidden="true" tabindex="-1"></a>                               <span class="at">prob =</span> <span class="fu">c</span>(.<span class="dv">5</span>, .<span class="dv">4</span>, .<span class="dv">07</span>, .<span class="dv">03</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a>                      <span class="cn">NA_character_</span>)</span>
+<span id="cb13-128"><a href="#cb13-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-129"><a href="#cb13-129" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>county_code <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(<span class="sc">!</span><span class="fu">is.na</span>(df<span class="sc">$</span>case_id),</span>
+<span id="cb13-130"><a href="#cb13-130" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">58</span>, <span class="dv">1000</span>,</span>
+<span id="cb13-131"><a href="#cb13-131" aria-hidden="true" tabindex="-1"></a>                               <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb13-132"><a href="#cb13-132" aria-hidden="true" tabindex="-1"></a>                      <span class="cn">NA_integer_</span>)</span>
+<span id="cb13-133"><a href="#cb13-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fill</span>(<span class="fu">c</span>(case_id, language, county_code)) <span class="co">#filling NULL case id and language variables with the previous non-NULL value</span></span>
+<span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a>                             <span class="co">#effectively assigning multiple people to a given case and giving them all same language</span></span>
+<span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-138"><a href="#cb13-138" aria-hidden="true" tabindex="-1"></a>N <span class="ot">=</span> <span class="fu">nrow</span>(df)</span>
+<span id="cb13-139"><a href="#cb13-139" aria-hidden="true" tabindex="-1"></a>N_families <span class="ot">=</span> <span class="fu">n_distinct</span>(df<span class="sc">$</span>case_id)</span>
+<span id="cb13-140"><a href="#cb13-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-141"><a href="#cb13-141" aria-hidden="true" tabindex="-1"></a><span class="co"># creating dummy active at outcome measurement</span></span>
+<span id="cb13-142"><a href="#cb13-142" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>active <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>),</span>
+<span id="cb13-143"><a href="#cb13-143" aria-hidden="true" tabindex="-1"></a>                    <span class="at">size =</span> N,</span>
+<span id="cb13-144"><a href="#cb13-144" aria-hidden="true" tabindex="-1"></a>                    <span class="at">prob =</span> <span class="fu">c</span>(.<span class="dv">12</span>, .<span class="dv">88</span>),</span>
+<span id="cb13-145"><a href="#cb13-145" aria-hidden="true" tabindex="-1"></a>                    <span class="at">replace =</span> T) </span>
+<span id="cb13-146"><a href="#cb13-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-147"><a href="#cb13-147" aria-hidden="true" tabindex="-1"></a><span class="co"># defining active cases as those with at least 1 active person</span></span>
+<span id="cb13-148"><a href="#cb13-148" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb13-149"><a href="#cb13-149" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(case_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-150"><a href="#cb13-150" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">active_case =</span> <span class="fu">if_else</span>(<span class="fu">sum</span>(active) <span class="sc">&gt;=</span> <span class="dv">1</span>, </span>
+<span id="cb13-151"><a href="#cb13-151" aria-hidden="true" tabindex="-1"></a>                               <span class="dv">1</span>,</span>
+<span id="cb13-152"><a href="#cb13-152" aria-hidden="true" tabindex="-1"></a>                               <span class="dv">0</span> )</span>
+<span id="cb13-153"><a href="#cb13-153" aria-hidden="true" tabindex="-1"></a>  ) </span>
+<span id="cb13-154"><a href="#cb13-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-155"><a href="#cb13-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-156"><a href="#cb13-156" aria-hidden="true" tabindex="-1"></a>outcome_df <span class="ot">&lt;-</span> df[<span class="dv">2</span>] <span class="sc">%&gt;%</span> </span>
+<span id="cb13-157"><a href="#cb13-157" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb13-158"><a href="#cb13-158" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">baseline_occurrence =</span> <span class="fu">sample</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, </span>
+<span id="cb13-159"><a href="#cb13-159" aria-hidden="true" tabindex="-1"></a>                                      <span class="fu">n_distinct</span>(case_id),</span>
+<span id="cb13-160"><a href="#cb13-160" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">replace =</span> <span class="cn">TRUE</span></span>
+<span id="cb13-161"><a href="#cb13-161" aria-hidden="true" tabindex="-1"></a>                                      )</span>
+<span id="cb13-162"><a href="#cb13-162" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb13-163"><a href="#cb13-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-164"><a href="#cb13-164" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Simple Randomization:** Once you've generated your sample dataframe with one row per observation you are randomizing--in this case adults, there are several ways to implement a simple randomization but *always set your seed for reproducibility!*</span>
+<span id="cb13-164"><a href="#cb13-164" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-165"><a href="#cb13-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-168"><a href="#cb13-168" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-169"><a href="#cb13-169" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: simple-rct</span></span>
-<span id="cb13-170"><a href="#cb13-170" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple Randomization</span></span>
-<span id="cb13-171"><a href="#cb13-171" aria-hidden="true" tabindex="-1"></a>N <span class="ot">=</span> <span class="fu">nrow</span>(df)</span>
-<span id="cb13-172"><a href="#cb13-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-173"><a href="#cb13-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-174"><a href="#cb13-174" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">15</span>)        <span class="co">#s etting seed for reproducibility </span></span>
+<span id="cb13-166"><a href="#cb13-166" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Simple Randomization:** Once you've generated your sample dataframe with one row per observation you are randomizing--in this case adults, there are several ways to implement a simple randomization but *always set your seed for reproducibility!*</span>
+<span id="cb13-167"><a href="#cb13-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-170"><a href="#cb13-170" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-171"><a href="#cb13-171" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: simple-rct</span></span>
+<span id="cb13-172"><a href="#cb13-172" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple Randomization</span></span>
+<span id="cb13-173"><a href="#cb13-173" aria-hidden="true" tabindex="-1"></a>N <span class="ot">=</span> <span class="fu">nrow</span>(df)</span>
+<span id="cb13-174"><a href="#cb13-174" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-175"><a href="#cb13-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-176"><a href="#cb13-176" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>demonstration <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="co"># 0 as control, 1 as demonstration </span></span>
-<span id="cb13-177"><a href="#cb13-177" aria-hidden="true" tabindex="-1"></a>                           <span class="at">size =</span> N, <span class="co"># number of samples to take</span></span>
-<span id="cb13-178"><a href="#cb13-178" aria-hidden="true" tabindex="-1"></a>                           <span class="at">prob =</span> <span class="fu">c</span>(.<span class="dv">5</span>, .<span class="dv">5</span>), <span class="co"># probability for each group</span></span>
-<span id="cb13-179"><a href="#cb13-179" aria-hidden="true" tabindex="-1"></a>                           <span class="at">replace =</span> T) <span class="co"># sampling from c(0, 1) with replacement</span></span>
-<span id="cb13-180"><a href="#cb13-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-181"><a href="#cb13-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-176"><a href="#cb13-176" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">15</span>)        <span class="co">#s etting seed for reproducibility </span></span>
+<span id="cb13-177"><a href="#cb13-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-178"><a href="#cb13-178" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>demonstration <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="co"># 0 as control, 1 as demonstration </span></span>
+<span id="cb13-179"><a href="#cb13-179" aria-hidden="true" tabindex="-1"></a>                           <span class="at">size =</span> N, <span class="co"># number of samples to take</span></span>
+<span id="cb13-180"><a href="#cb13-180" aria-hidden="true" tabindex="-1"></a>                           <span class="at">prob =</span> <span class="fu">c</span>(.<span class="dv">5</span>, .<span class="dv">5</span>), <span class="co"># probability for each group</span></span>
+<span id="cb13-181"><a href="#cb13-181" aria-hidden="true" tabindex="-1"></a>                           <span class="at">replace =</span> T) <span class="co"># sampling from c(0, 1) with replacement</span></span>
 <span id="cb13-182"><a href="#cb13-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-183"><a href="#cb13-183" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-183"><a href="#cb13-183" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-184"><a href="#cb13-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-185"><a href="#cb13-185" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Cluster Randomization:** Effects can 'spillover' and one way to account for this is to randomize at a cluster-level. You may also be providing an intervention that could have an impact on the cluster and not just individual observation.</span>
+<span id="cb13-185"><a href="#cb13-185" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-186"><a href="#cb13-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-187"><a href="#cb13-187" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>For example, you might think that telling one parent, caretaker or adult about the enhanced SNAP work support could increase the likelihood other adults in the family enroll. In that case you may want to randomize at the case level to eliminate within-case spillover effects.</span>
+<span id="cb13-187"><a href="#cb13-187" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Cluster Randomization:** Effects can 'spillover' and one way to account for this is to randomize at a cluster-level. You may also be providing an intervention that could have an impact on the cluster and not just individual observation.</span>
 <span id="cb13-188"><a href="#cb13-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-191"><a href="#cb13-191" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-192"><a href="#cb13-192" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: case-randomization  </span></span>
-<span id="cb13-193"><a href="#cb13-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-194"><a href="#cb13-194" aria-hidden="true" tabindex="-1"></a><span class="co"># Case/Clustered Randomization</span></span>
+<span id="cb13-189"><a href="#cb13-189" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>For example, you might think that telling one parent, caretaker or adult about the enhanced SNAP work support could increase the likelihood other adults in the family enroll. In that case you may want to randomize at the case level to eliminate within-case spillover effects.</span>
+<span id="cb13-190"><a href="#cb13-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-193"><a href="#cb13-193" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-194"><a href="#cb13-194" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: case-randomization  </span></span>
 <span id="cb13-195"><a href="#cb13-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-196"><a href="#cb13-196" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">15</span>)        <span class="co">#setting seed for reproducibility </span></span>
+<span id="cb13-196"><a href="#cb13-196" aria-hidden="true" tabindex="-1"></a><span class="co"># Case/Clustered Randomization</span></span>
 <span id="cb13-197"><a href="#cb13-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-198"><a href="#cb13-198" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb13-199"><a href="#cb13-199" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(case_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-200"><a href="#cb13-200" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">demonstration =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>),  <span class="co">#0 as control, 1 as demonstration group</span></span>
-<span id="cb13-201"><a href="#cb13-201" aria-hidden="true" tabindex="-1"></a>                                <span class="dv">1</span>,  <span class="co">#number of items to choose for the entire case_id group</span></span>
-<span id="cb13-202"><a href="#cb13-202" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">c</span>(.<span class="dv">5</span>, .<span class="dv">5</span>), <span class="co">#probability for each group</span></span>
-<span id="cb13-203"><a href="#cb13-203" aria-hidden="true" tabindex="-1"></a>                           <span class="at">replace =</span> T)) <span class="sc">%&gt;%</span>  <span class="co">#sampling from c(0, 1) with replacement </span></span>
-<span id="cb13-204"><a href="#cb13-204" aria-hidden="true" tabindex="-1"></a><span class="fu">ungroup</span>()</span>
-<span id="cb13-205"><a href="#cb13-205" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-206"><a href="#cb13-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-207"><a href="#cb13-207" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Blocked Randomization in Stratified Sample:** Stratifying randomizes subgroups separately to ensure equal representation across demonstration and control among each subgroup.</span>
+<span id="cb13-198"><a href="#cb13-198" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">15</span>)        <span class="co">#setting seed for reproducibility </span></span>
+<span id="cb13-199"><a href="#cb13-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-200"><a href="#cb13-200" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb13-201"><a href="#cb13-201" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(case_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-202"><a href="#cb13-202" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">demonstration =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>),  <span class="co">#0 as control, 1 as demonstration group</span></span>
+<span id="cb13-203"><a href="#cb13-203" aria-hidden="true" tabindex="-1"></a>                                <span class="dv">1</span>,  <span class="co">#number of items to choose for the entire case_id group</span></span>
+<span id="cb13-204"><a href="#cb13-204" aria-hidden="true" tabindex="-1"></a>                           <span class="fu">c</span>(.<span class="dv">5</span>, .<span class="dv">5</span>), <span class="co">#probability for each group</span></span>
+<span id="cb13-205"><a href="#cb13-205" aria-hidden="true" tabindex="-1"></a>                           <span class="at">replace =</span> T)) <span class="sc">%&gt;%</span>  <span class="co">#sampling from c(0, 1) with replacement </span></span>
+<span id="cb13-206"><a href="#cb13-206" aria-hidden="true" tabindex="-1"></a><span class="fu">ungroup</span>()</span>
+<span id="cb13-207"><a href="#cb13-207" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-208"><a href="#cb13-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-209"><a href="#cb13-209" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Primary language is an example of a stratifying variable you could consider, especially for smaller sub-groups with a primary language other than English or Spanish. Here the package <span class="co">[</span><span class="ot">*randomizr*</span><span class="co">](https://declaredesign.org/r/randomizr/)</span> is helpful. It can be used to stratify at the case level too.</span>
+<span id="cb13-209"><a href="#cb13-209" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Blocked Randomization in Stratified Sample:** Stratifying randomizes subgroups separately to ensure equal representation across demonstration and control among each subgroup.</span>
 <span id="cb13-210"><a href="#cb13-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-213"><a href="#cb13-213" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-214"><a href="#cb13-214" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: stratified-case-randomization</span></span>
-<span id="cb13-215"><a href="#cb13-215" aria-hidden="true" tabindex="-1"></a><span class="co">#| warnings: false</span></span>
-<span id="cb13-216"><a href="#cb13-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-217"><a href="#cb13-217" aria-hidden="true" tabindex="-1"></a><span class="co"># Stratified Case/Clustered Randomization</span></span>
+<span id="cb13-211"><a href="#cb13-211" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Primary language is an example of a stratifying variable you could consider, especially for smaller sub-groups with a primary language other than English or Spanish. Here the package <span class="co">[</span><span class="ot">*randomizr*</span><span class="co">](https://declaredesign.org/r/randomizr/)</span> is helpful. It can be used to stratify at the case level too.</span>
+<span id="cb13-212"><a href="#cb13-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-215"><a href="#cb13-215" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-216"><a href="#cb13-216" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: stratified-case-randomization</span></span>
+<span id="cb13-217"><a href="#cb13-217" aria-hidden="true" tabindex="-1"></a><span class="co">#| warnings: false</span></span>
 <span id="cb13-218"><a href="#cb13-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-219"><a href="#cb13-219" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("randomizr")</span></span>
-<span id="cb13-220"><a href="#cb13-220" aria-hidden="true" tabindex="-1"></a><span class="co">#library(randomizr)</span></span>
-<span id="cb13-221"><a href="#cb13-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-222"><a href="#cb13-222" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">15</span>)        <span class="co">#setting seed for reproducibility </span></span>
+<span id="cb13-219"><a href="#cb13-219" aria-hidden="true" tabindex="-1"></a><span class="co"># Stratified Case/Clustered Randomization</span></span>
+<span id="cb13-220"><a href="#cb13-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-221"><a href="#cb13-221" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("randomizr")</span></span>
+<span id="cb13-222"><a href="#cb13-222" aria-hidden="true" tabindex="-1"></a><span class="co">#library(randomizr)</span></span>
 <span id="cb13-223"><a href="#cb13-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-224"><a href="#cb13-224" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb13-225"><a href="#cb13-225" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(case_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-226"><a href="#cb13-226" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb13-227"><a href="#cb13-227" aria-hidden="true" tabindex="-1"></a>    <span class="at">cluster_size =</span> <span class="fu">n</span>(), <span class="co">#total adults per case</span></span>
-<span id="cb13-228"><a href="#cb13-228" aria-hidden="true" tabindex="-1"></a>    <span class="at">strata =</span> language <span class="co"># if stratifying on mult vars this could be paste0(var1, "_", language/var2)</span></span>
-<span id="cb13-229"><a href="#cb13-229" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-230"><a href="#cb13-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-231"><a href="#cb13-231" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>demonstration <span class="ot">&lt;-</span> randomizr<span class="sc">::</span><span class="fu">block_and_cluster_ra</span>(<span class="at">clusters =</span> df<span class="sc">$</span>case_id,</span>
-<span id="cb13-232"><a href="#cb13-232" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">blocks =</span> df<span class="sc">$</span>strata, <span class="co">#your stratification or block variable</span></span>
-<span id="cb13-233"><a href="#cb13-233" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">prob_each =</span> <span class="fu">c</span>(.<span class="dv">5</span>, .<span class="dv">5</span>), <span class="co"># adjust as needed for treatment balance</span></span>
-<span id="cb13-234"><a href="#cb13-234" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">conditions =</span> <span class="fu">c</span>(<span class="st">"demonstration"</span>, <span class="st">"control"</span>) <span class="co">#assigned value</span></span>
-<span id="cb13-235"><a href="#cb13-235" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-236"><a href="#cb13-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-237"><a href="#cb13-237" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-224"><a href="#cb13-224" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">15</span>)        <span class="co">#setting seed for reproducibility </span></span>
+<span id="cb13-225"><a href="#cb13-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-226"><a href="#cb13-226" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb13-227"><a href="#cb13-227" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(case_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-228"><a href="#cb13-228" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb13-229"><a href="#cb13-229" aria-hidden="true" tabindex="-1"></a>    <span class="at">cluster_size =</span> <span class="fu">n</span>(), <span class="co">#total adults per case</span></span>
+<span id="cb13-230"><a href="#cb13-230" aria-hidden="true" tabindex="-1"></a>    <span class="at">strata =</span> language <span class="co"># if stratifying on mult vars this could be paste0(var1, "_", language/var2)</span></span>
+<span id="cb13-231"><a href="#cb13-231" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-232"><a href="#cb13-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-233"><a href="#cb13-233" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>demonstration <span class="ot">&lt;-</span> randomizr<span class="sc">::</span><span class="fu">block_and_cluster_ra</span>(<span class="at">clusters =</span> df<span class="sc">$</span>case_id,</span>
+<span id="cb13-234"><a href="#cb13-234" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">blocks =</span> df<span class="sc">$</span>strata, <span class="co">#your stratification or block variable</span></span>
+<span id="cb13-235"><a href="#cb13-235" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">prob_each =</span> <span class="fu">c</span>(.<span class="dv">5</span>, .<span class="dv">5</span>), <span class="co"># adjust as needed for treatment balance</span></span>
+<span id="cb13-236"><a href="#cb13-236" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">conditions =</span> <span class="fu">c</span>(<span class="st">"demonstration"</span>, <span class="st">"control"</span>) <span class="co">#assigned value</span></span>
+<span id="cb13-237"><a href="#cb13-237" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb13-238"><a href="#cb13-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-239"><a href="#cb13-239" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Multiple Treatment Arms:** Your outreach experiment may also include multiple versions of the message content to test which communication messages are most effective. If that was the case, you could easily adapt the block and cluster randomization arguments as follows:</span>
+<span id="cb13-239"><a href="#cb13-239" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-240"><a href="#cb13-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-243"><a href="#cb13-243" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-244"><a href="#cb13-244" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: strat-case-two_messages</span></span>
-<span id="cb13-245"><a href="#cb13-245" aria-hidden="true" tabindex="-1"></a><span class="co">#| warnings: false</span></span>
-<span id="cb13-246"><a href="#cb13-246" aria-hidden="true" tabindex="-1"></a><span class="co">#Two Versions of Outreach Messages</span></span>
-<span id="cb13-247"><a href="#cb13-247" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">15</span>)        <span class="co">#setting seed for reproducibility </span></span>
-<span id="cb13-248"><a href="#cb13-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-249"><a href="#cb13-249" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb13-250"><a href="#cb13-250" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(case_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-251"><a href="#cb13-251" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb13-252"><a href="#cb13-252" aria-hidden="true" tabindex="-1"></a>    <span class="at">cluster_size =</span> <span class="fu">n</span>(), </span>
-<span id="cb13-253"><a href="#cb13-253" aria-hidden="true" tabindex="-1"></a>    <span class="at">strata =</span> language </span>
-<span id="cb13-254"><a href="#cb13-254" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-255"><a href="#cb13-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-256"><a href="#cb13-256" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>demonstration <span class="ot">&lt;-</span> randomizr<span class="sc">::</span><span class="fu">block_and_cluster_ra</span>(<span class="at">clusters =</span> df<span class="sc">$</span>case_id,</span>
-<span id="cb13-257"><a href="#cb13-257" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">blocks =</span> df<span class="sc">$</span>strata,</span>
-<span id="cb13-258"><a href="#cb13-258" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">prob_each =</span> <span class="fu">c</span>(.<span class="dv">5</span><span class="sc">/</span><span class="dv">2</span>, <span class="co">#message group 1</span></span>
-<span id="cb13-259"><a href="#cb13-259" aria-hidden="true" tabindex="-1"></a>                                                       .<span class="dv">5</span><span class="sc">/</span><span class="dv">2</span>, <span class="co">#message group 2</span></span>
-<span id="cb13-260"><a href="#cb13-260" aria-hidden="true" tabindex="-1"></a>                                                       .<span class="dv">5</span>), <span class="co"># adjust as needed for treatment balance</span></span>
-<span id="cb13-261"><a href="#cb13-261" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">conditions =</span> <span class="fu">c</span>(<span class="st">"message_vers_one"</span>, <span class="co">#assigned value 1</span></span>
-<span id="cb13-262"><a href="#cb13-262" aria-hidden="true" tabindex="-1"></a>                                                        <span class="st">"message_vers_two"</span>, <span class="co">#assigned value 2</span></span>
-<span id="cb13-263"><a href="#cb13-263" aria-hidden="true" tabindex="-1"></a>                                                        <span class="st">"control"</span>)          <span class="co">#assigned value 3</span></span>
-<span id="cb13-264"><a href="#cb13-264" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-265"><a href="#cb13-265" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-266"><a href="#cb13-266" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-241"><a href="#cb13-241" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Multiple Treatment Arms:** Your outreach experiment may also include multiple versions of the message content to test which communication messages are most effective. If that was the case, you could easily adapt the block and cluster randomization arguments as follows:</span>
+<span id="cb13-242"><a href="#cb13-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-245"><a href="#cb13-245" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-246"><a href="#cb13-246" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: strat-case-two_messages</span></span>
+<span id="cb13-247"><a href="#cb13-247" aria-hidden="true" tabindex="-1"></a><span class="co">#| warnings: false</span></span>
+<span id="cb13-248"><a href="#cb13-248" aria-hidden="true" tabindex="-1"></a><span class="co">#Two Versions of Outreach Messages</span></span>
+<span id="cb13-249"><a href="#cb13-249" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">15</span>)        <span class="co">#setting seed for reproducibility </span></span>
+<span id="cb13-250"><a href="#cb13-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-251"><a href="#cb13-251" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb13-252"><a href="#cb13-252" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(case_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-253"><a href="#cb13-253" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb13-254"><a href="#cb13-254" aria-hidden="true" tabindex="-1"></a>    <span class="at">cluster_size =</span> <span class="fu">n</span>(), </span>
+<span id="cb13-255"><a href="#cb13-255" aria-hidden="true" tabindex="-1"></a>    <span class="at">strata =</span> language </span>
+<span id="cb13-256"><a href="#cb13-256" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-257"><a href="#cb13-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-258"><a href="#cb13-258" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>demonstration <span class="ot">&lt;-</span> randomizr<span class="sc">::</span><span class="fu">block_and_cluster_ra</span>(<span class="at">clusters =</span> df<span class="sc">$</span>case_id,</span>
+<span id="cb13-259"><a href="#cb13-259" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">blocks =</span> df<span class="sc">$</span>strata,</span>
+<span id="cb13-260"><a href="#cb13-260" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">prob_each =</span> <span class="fu">c</span>(.<span class="dv">5</span><span class="sc">/</span><span class="dv">2</span>, <span class="co">#message group 1</span></span>
+<span id="cb13-261"><a href="#cb13-261" aria-hidden="true" tabindex="-1"></a>                                                       .<span class="dv">5</span><span class="sc">/</span><span class="dv">2</span>, <span class="co">#message group 2</span></span>
+<span id="cb13-262"><a href="#cb13-262" aria-hidden="true" tabindex="-1"></a>                                                       .<span class="dv">5</span>), <span class="co"># adjust as needed for treatment balance</span></span>
+<span id="cb13-263"><a href="#cb13-263" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">conditions =</span> <span class="fu">c</span>(<span class="st">"message_vers_one"</span>, <span class="co">#assigned value 1</span></span>
+<span id="cb13-264"><a href="#cb13-264" aria-hidden="true" tabindex="-1"></a>                                                        <span class="st">"message_vers_two"</span>, <span class="co">#assigned value 2</span></span>
+<span id="cb13-265"><a href="#cb13-265" aria-hidden="true" tabindex="-1"></a>                                                        <span class="st">"control"</span>)          <span class="co">#assigned value 3</span></span>
+<span id="cb13-266"><a href="#cb13-266" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb13-267"><a href="#cb13-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-268"><a href="#cb13-268" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Phase-in** or **Step-wedge**: If you are providing the demonstration to *everyone* but staggering the timing by which the control group receives the demonstration or treatment, you would follow the exact *block_and_cluster_ra* function as above.</span>
+<span id="cb13-268"><a href="#cb13-268" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-269"><a href="#cb13-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-270"><a href="#cb13-270" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>See <span class="sc">\\\\</span>Cdss6psas2<span class="sc">\\</span>RADD<span class="sc">\\</span>Fraud<span class="sc">\\</span>Projects<span class="sc">\\</span>PIN Change Outreach Experiment<span class="sc">\\</span>code<span class="sc">\\</span>04_Sample_Randomization.R for an example of multiple treatment arm phased in *block_and_cluster_ra* script</span>
+<span id="cb13-270"><a href="#cb13-270" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Phase-in** or **Step-wedge**: If you are providing the demonstration to *everyone* but staggering the timing by which the control group receives the demonstration or treatment, you would follow the exact *block_and_cluster_ra* function as above.</span>
 <span id="cb13-271"><a href="#cb13-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-272"><a href="#cb13-272" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>See Joaquin's brown bag presentation on causal inference for more background on this design.</span>
+<span id="cb13-272"><a href="#cb13-272" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>See <span class="sc">\[</span>*removed\]* for an example of multiple treatment arm phased in *block_and_cluster_ra* script</span>
 <span id="cb13-273"><a href="#cb13-273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-274"><a href="#cb13-274" aria-hidden="true" tabindex="-1"></a><span class="fu">### Balance Testing</span></span>
+<span id="cb13-274"><a href="#cb13-274" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>See <span class="sc">\[</span>*removed\]* on causal inference for more background on this design.</span>
 <span id="cb13-275"><a href="#cb13-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-276"><a href="#cb13-276" aria-hidden="true" tabindex="-1"></a>After randomizing the data but pre-intervention, it is essential to balance test across key variables. This ensures they are equally represented across demonstration groups.</span>
+<span id="cb13-276"><a href="#cb13-276" aria-hidden="true" tabindex="-1"></a><span class="fu">### Balance Testing</span></span>
 <span id="cb13-277"><a href="#cb13-277" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-278"><a href="#cb13-278" aria-hidden="true" tabindex="-1"></a>For instance, if by chance you have more people already participating in the enhanced work supports in your control group at baseline, this could impact the validity of the analysis and might warrant setting a new seed and randomizing again until outcomes and control variables are more equally represented across groups.</span>
+<span id="cb13-278"><a href="#cb13-278" aria-hidden="true" tabindex="-1"></a>After randomizing the data but pre-intervention, it is essential to balance test across key variables. This ensures they are equally represented across demonstration groups.</span>
 <span id="cb13-279"><a href="#cb13-279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-280"><a href="#cb13-280" aria-hidden="true" tabindex="-1"></a><span class="fu">#### nnet &amp; stargazer</span></span>
+<span id="cb13-280"><a href="#cb13-280" aria-hidden="true" tabindex="-1"></a>For instance, if by chance you have more people already participating in the enhanced work supports in your control group at baseline, this could impact the validity of the analysis and might warrant setting a new seed and randomizing again until outcomes and control variables are more equally represented across groups.</span>
 <span id="cb13-281"><a href="#cb13-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-282"><a href="#cb13-282" aria-hidden="true" tabindex="-1"></a>This can be done with two packages in R, *nnet* to create a linear regression model and *stargazer* to present the information and a table. The end of the below code chunk also includes commented function to save the stargazer results for later review:</span>
+<span id="cb13-282"><a href="#cb13-282" aria-hidden="true" tabindex="-1"></a><span class="fu">#### nnet &amp; stargazer</span></span>
 <span id="cb13-283"><a href="#cb13-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-286"><a href="#cb13-286" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-287"><a href="#cb13-287" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: balance-testing</span></span>
-<span id="cb13-288"><a href="#cb13-288" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb13-289"><a href="#cb13-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-290"><a href="#cb13-290" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("nnet", "stargazer")</span></span>
-<span id="cb13-291"><a href="#cb13-291" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nnet)</span>
-<span id="cb13-292"><a href="#cb13-292" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
-<span id="cb13-293"><a href="#cb13-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-294"><a href="#cb13-294" aria-hidden="true" tabindex="-1"></a><span class="co">#Creating Sample + Baseline Outcome Dataset</span></span>
-<span id="cb13-295"><a href="#cb13-295" aria-hidden="true" tabindex="-1"></a>sample_baseline_df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb13-296"><a href="#cb13-296" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(outcome_df,</span>
-<span id="cb13-297"><a href="#cb13-297" aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="st">"case_id"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-298"><a href="#cb13-298" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(case_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-299"><a href="#cb13-299" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>) <span class="co"># selecting one row per case because sample is clustered</span></span>
-<span id="cb13-300"><a href="#cb13-300" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-301"><a href="#cb13-301" aria-hidden="true" tabindex="-1"></a>outcome_language_balance <span class="ot">&lt;-</span> <span class="fu">multinom</span>(</span>
-<span id="cb13-302"><a href="#cb13-302" aria-hidden="true" tabindex="-1"></a>    demonstration <span class="sc">~</span> baseline_occurrence <span class="sc">+</span> language, </span>
-<span id="cb13-303"><a href="#cb13-303" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> sample_baseline_df,</span>
-<span id="cb13-304"><a href="#cb13-304" aria-hidden="true" tabindex="-1"></a>    <span class="at">trace =</span> <span class="cn">FALSE</span> ) <span class="co"># preventing multinom from printing weights </span></span>
-<span id="cb13-305"><a href="#cb13-305" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-306"><a href="#cb13-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-307"><a href="#cb13-307" aria-hidden="true" tabindex="-1"></a><span class="co"># stargazer_language_balance &lt;- stargazer(outcome_language_balance,</span></span>
-<span id="cb13-308"><a href="#cb13-308" aria-hidden="true" tabindex="-1"></a><span class="co">#                                       type = "text")  #commented out to suppress printing</span></span>
-<span id="cb13-309"><a href="#cb13-309" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-310"><a href="#cb13-310" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-311"><a href="#cb13-311" aria-hidden="true" tabindex="-1"></a><span class="co">#Saving File with Seed Number in Title</span></span>
-<span id="cb13-312"><a href="#cb13-312" aria-hidden="true" tabindex="-1"></a><span class="co">#write.table(outcome_language_balance, </span></span>
-<span id="cb13-313"><a href="#cb13-313" aria-hidden="true" tabindex="-1"></a><span class="co">#            paste0("stargazer outputs/seed 15_",</span></span>
-<span id="cb13-314"><a href="#cb13-314" aria-hidden="true" tabindex="-1"></a><span class="co">#            "Block_Cluster_Balance_Test.txt"))</span></span>
-<span id="cb13-315"><a href="#cb13-315" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-316"><a href="#cb13-316" aria-hidden="true" tabindex="-1"></a><span class="co"># Returning Stargazer Output with more labels &amp; formatting</span></span>
+<span id="cb13-284"><a href="#cb13-284" aria-hidden="true" tabindex="-1"></a>This can be done with two packages in R, *nnet* to create a linear regression model and *stargazer* to present the information and a table. The end of the below code chunk also includes commented function to save the stargazer results for later review:</span>
+<span id="cb13-285"><a href="#cb13-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-288"><a href="#cb13-288" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-289"><a href="#cb13-289" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: balance-testing</span></span>
+<span id="cb13-290"><a href="#cb13-290" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb13-291"><a href="#cb13-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-292"><a href="#cb13-292" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("nnet", "stargazer")</span></span>
+<span id="cb13-293"><a href="#cb13-293" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nnet)</span>
+<span id="cb13-294"><a href="#cb13-294" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
+<span id="cb13-295"><a href="#cb13-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-296"><a href="#cb13-296" aria-hidden="true" tabindex="-1"></a><span class="co">#Creating Sample + Baseline Outcome Dataset</span></span>
+<span id="cb13-297"><a href="#cb13-297" aria-hidden="true" tabindex="-1"></a>sample_baseline_df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb13-298"><a href="#cb13-298" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(outcome_df,</span>
+<span id="cb13-299"><a href="#cb13-299" aria-hidden="true" tabindex="-1"></a>            <span class="at">by =</span> <span class="st">"case_id"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-300"><a href="#cb13-300" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(case_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-301"><a href="#cb13-301" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>) <span class="co"># selecting one row per case because sample is clustered</span></span>
+<span id="cb13-302"><a href="#cb13-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-303"><a href="#cb13-303" aria-hidden="true" tabindex="-1"></a>outcome_language_balance <span class="ot">&lt;-</span> <span class="fu">multinom</span>(</span>
+<span id="cb13-304"><a href="#cb13-304" aria-hidden="true" tabindex="-1"></a>    demonstration <span class="sc">~</span> baseline_occurrence <span class="sc">+</span> language, </span>
+<span id="cb13-305"><a href="#cb13-305" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> sample_baseline_df,</span>
+<span id="cb13-306"><a href="#cb13-306" aria-hidden="true" tabindex="-1"></a>    <span class="at">trace =</span> <span class="cn">FALSE</span> ) <span class="co"># preventing multinom from printing weights </span></span>
+<span id="cb13-307"><a href="#cb13-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-308"><a href="#cb13-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-309"><a href="#cb13-309" aria-hidden="true" tabindex="-1"></a><span class="co"># stargazer_language_balance &lt;- stargazer(outcome_language_balance,</span></span>
+<span id="cb13-310"><a href="#cb13-310" aria-hidden="true" tabindex="-1"></a><span class="co">#                                       type = "text")  #commented out to suppress printing</span></span>
+<span id="cb13-311"><a href="#cb13-311" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-312"><a href="#cb13-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-313"><a href="#cb13-313" aria-hidden="true" tabindex="-1"></a><span class="co">#Saving File with Seed Number in Title</span></span>
+<span id="cb13-314"><a href="#cb13-314" aria-hidden="true" tabindex="-1"></a><span class="co">#write.table(outcome_language_balance, </span></span>
+<span id="cb13-315"><a href="#cb13-315" aria-hidden="true" tabindex="-1"></a><span class="co">#            paste0("stargazer outputs/seed 15_",</span></span>
+<span id="cb13-316"><a href="#cb13-316" aria-hidden="true" tabindex="-1"></a><span class="co">#            "Block_Cluster_Balance_Test.txt"))</span></span>
 <span id="cb13-317"><a href="#cb13-317" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-318"><a href="#cb13-318" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(outcome_language_balance,  </span>
-<span id="cb13-319"><a href="#cb13-319" aria-hidden="true" tabindex="-1"></a>          <span class="at">type =</span> <span class="st">"text"</span>,</span>
-<span id="cb13-320"><a href="#cb13-320" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">"Baseline Testing of Demonstration Groups"</span>,</span>
-<span id="cb13-321"><a href="#cb13-321" aria-hidden="true" tabindex="-1"></a>          <span class="at">style =</span> <span class="st">"aer"</span>, <span class="co"># you can set styles of output to resemble academic journal</span></span>
-<span id="cb13-322"><a href="#cb13-322" aria-hidden="true" tabindex="-1"></a>          <span class="at">omit.stat =</span> <span class="st">"aic"</span>,  <span class="co"># argument for ommitting certain statistic codes</span></span>
-<span id="cb13-323"><a href="#cb13-323" aria-hidden="true" tabindex="-1"></a>          <span class="at">covariate.labels =</span> <span class="fu">c</span>( <span class="co"># covariate/row labels</span></span>
-<span id="cb13-324"><a href="#cb13-324" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Baseline Occurrence"</span>,</span>
-<span id="cb13-325"><a href="#cb13-325" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Language: Mandarin"</span>,</span>
-<span id="cb13-326"><a href="#cb13-326" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Language: Russian"</span>,</span>
-<span id="cb13-327"><a href="#cb13-327" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Language: Spanish"</span>,</span>
-<span id="cb13-328"><a href="#cb13-328" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Constant"</span>),</span>
-<span id="cb13-329"><a href="#cb13-329" aria-hidden="true" tabindex="-1"></a>          <span class="at">notes =</span> <span class="st">"Comparison group is message version one, language: English"</span> <span class="co">#notes at bottom</span></span>
-<span id="cb13-330"><a href="#cb13-330" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-331"><a href="#cb13-331" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-332"><a href="#cb13-332" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-333"><a href="#cb13-333" aria-hidden="true" tabindex="-1"></a>Coefficients are on top and standard errors are below in parenthesis. The statistically significant *constant* in the control group simply reflects how the control group is twice as large as the other two groups; this is because our the demonstration group is by design split into a message version one and message version two at 25% of the total sample.</span>
+<span id="cb13-318"><a href="#cb13-318" aria-hidden="true" tabindex="-1"></a><span class="co"># Returning Stargazer Output with more labels &amp; formatting</span></span>
+<span id="cb13-319"><a href="#cb13-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-320"><a href="#cb13-320" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(outcome_language_balance,  </span>
+<span id="cb13-321"><a href="#cb13-321" aria-hidden="true" tabindex="-1"></a>          <span class="at">type =</span> <span class="st">"text"</span>,</span>
+<span id="cb13-322"><a href="#cb13-322" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">"Baseline Testing of Demonstration Groups"</span>,</span>
+<span id="cb13-323"><a href="#cb13-323" aria-hidden="true" tabindex="-1"></a>          <span class="at">style =</span> <span class="st">"aer"</span>, <span class="co"># you can set styles of output to resemble academic journal</span></span>
+<span id="cb13-324"><a href="#cb13-324" aria-hidden="true" tabindex="-1"></a>          <span class="at">omit.stat =</span> <span class="st">"aic"</span>,  <span class="co"># argument for ommitting certain statistic codes</span></span>
+<span id="cb13-325"><a href="#cb13-325" aria-hidden="true" tabindex="-1"></a>          <span class="at">covariate.labels =</span> <span class="fu">c</span>( <span class="co"># covariate/row labels</span></span>
+<span id="cb13-326"><a href="#cb13-326" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Baseline Occurrence"</span>,</span>
+<span id="cb13-327"><a href="#cb13-327" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Language: Mandarin"</span>,</span>
+<span id="cb13-328"><a href="#cb13-328" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Language: Russian"</span>,</span>
+<span id="cb13-329"><a href="#cb13-329" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Language: Spanish"</span>,</span>
+<span id="cb13-330"><a href="#cb13-330" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"Constant"</span>),</span>
+<span id="cb13-331"><a href="#cb13-331" aria-hidden="true" tabindex="-1"></a>          <span class="at">notes =</span> <span class="st">"Comparison group is message version one, language: English"</span> <span class="co">#notes at bottom</span></span>
+<span id="cb13-332"><a href="#cb13-332" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-333"><a href="#cb13-333" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-334"><a href="#cb13-334" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-335"><a href="#cb13-335" aria-hidden="true" tabindex="-1"></a>In our dummy data, there are no statistically significant differences in observable characteristics between the groups.</span>
+<span id="cb13-335"><a href="#cb13-335" aria-hidden="true" tabindex="-1"></a>Coefficients are on top and standard errors are below in parenthesis. The statistically significant *constant* in the control group simply reflects how the control group is twice as large as the other two groups; this is because our the demonstration group is by design split into a message version one and message version two at 25% of the total sample.</span>
 <span id="cb13-336"><a href="#cb13-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-337"><a href="#cb13-337" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Post-Intervention**</span></span>
+<span id="cb13-337"><a href="#cb13-337" aria-hidden="true" tabindex="-1"></a>In our dummy data, there are no statistically significant differences in observable characteristics between the groups.</span>
 <span id="cb13-338"><a href="#cb13-338" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-339"><a href="#cb13-339" aria-hidden="true" tabindex="-1"></a><span class="fu">### Measuring Attrition</span></span>
+<span id="cb13-339"><a href="#cb13-339" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Post-Intervention**</span></span>
 <span id="cb13-340"><a href="#cb13-340" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-341"><a href="#cb13-341" aria-hidden="true" tabindex="-1"></a>Sample observations may 'drop out' before you're able to measure outcomes of interest. One way this could happen is if a portion of your sample is on your caseload at the time of sampling and even messaging, but exits the program by the time you measure outcomes.</span>
+<span id="cb13-341"><a href="#cb13-341" aria-hidden="true" tabindex="-1"></a><span class="fu">### Measuring Attrition</span></span>
 <span id="cb13-342"><a href="#cb13-342" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-343"><a href="#cb13-343" aria-hidden="true" tabindex="-1"></a>Attrition can impact the study validity or statistical power. It may also reflect an underlying bias on observed or unobserved variables where certain sub-groups systematically drop off more frequently than others. Consequently, it's important to check for *overall attrition* and *differential attrition.*</span>
+<span id="cb13-343"><a href="#cb13-343" aria-hidden="true" tabindex="-1"></a>Sample observations may 'drop out' before you're able to measure outcomes of interest. One way this could happen is if a portion of your sample is on your caseload at the time of sampling and even messaging, but exits the program by the time you measure outcomes.</span>
 <span id="cb13-344"><a href="#cb13-344" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-345"><a href="#cb13-345" aria-hidden="true" tabindex="-1"></a>To continue with the example of messaging for enhanced work supports for CalFresh families, attrition would be measured by the proportion of families still on the caseload before the completion of the outcome measurement period. The package *kableExtra* can be used for cleaner summary tables:</span>
+<span id="cb13-345"><a href="#cb13-345" aria-hidden="true" tabindex="-1"></a>Attrition can impact the study validity or statistical power. It may also reflect an underlying bias on observed or unobserved variables where certain sub-groups systematically drop off more frequently than others. Consequently, it's important to check for *overall attrition* and *differential attrition.*</span>
 <span id="cb13-346"><a href="#cb13-346" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-349"><a href="#cb13-349" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-350"><a href="#cb13-350" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: overall-attrition</span></span>
-<span id="cb13-351"><a href="#cb13-351" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Overall Attrition Rates"</span></span>
-<span id="cb13-352"><a href="#cb13-352" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-353"><a href="#cb13-353" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("kableExtra")</span></span>
-<span id="cb13-354"><a href="#cb13-354" aria-hidden="true" tabindex="-1"></a><span class="co">#library(kableExtra)</span></span>
-<span id="cb13-355"><a href="#cb13-355" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-356"><a href="#cb13-356" aria-hidden="true" tabindex="-1"></a>N_families <span class="ot">=</span> <span class="fu">n_distinct</span>(df<span class="sc">$</span>case_id)</span>
+<span id="cb13-347"><a href="#cb13-347" aria-hidden="true" tabindex="-1"></a>To continue with the example of messaging for enhanced work supports for CalFresh families, attrition would be measured by the proportion of families still on the caseload before the completion of the outcome measurement period. The package *kableExtra* can be used for cleaner summary tables:</span>
+<span id="cb13-348"><a href="#cb13-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-351"><a href="#cb13-351" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-352"><a href="#cb13-352" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: overall-attrition</span></span>
+<span id="cb13-353"><a href="#cb13-353" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Overall Attrition Rates"</span></span>
+<span id="cb13-354"><a href="#cb13-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-355"><a href="#cb13-355" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("kableExtra")</span></span>
+<span id="cb13-356"><a href="#cb13-356" aria-hidden="true" tabindex="-1"></a><span class="co">#library(kableExtra)</span></span>
 <span id="cb13-357"><a href="#cb13-357" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-358"><a href="#cb13-358" aria-hidden="true" tabindex="-1"></a><span class="co"># creating attrition table by treatment</span></span>
-<span id="cb13-359"><a href="#cb13-359" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb13-360"><a href="#cb13-360" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(active_case) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-361"><a href="#cb13-361" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="st">`</span><span class="at">N families</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">n_distinct</span>(case_id),</span>
-<span id="cb13-362"><a href="#cb13-362" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">% of total sample</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>((<span class="st">`</span><span class="at">N families</span><span class="st">`</span><span class="sc">/</span>N_families)<span class="sc">*</span><span class="dv">100</span>, <span class="dv">1</span>),</span>
-<span id="cb13-363"><a href="#cb13-363" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">'keep'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-364"><a href="#cb13-364" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">active_case =</span> <span class="fu">ifelse</span>(active_case <span class="sc">==</span> <span class="dv">1</span>, <span class="st">'Yes'</span>, <span class="st">'No'</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-365"><a href="#cb13-365" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">`</span><span class="at">Active Case</span><span class="st">`</span><span class="ot">=</span> active_case) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-366"><a href="#cb13-366" aria-hidden="true" tabindex="-1"></a>  kbl <span class="sc">%&gt;%</span> </span>
-<span id="cb13-367"><a href="#cb13-367" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_minimal</span>(<span class="at">position=</span><span class="st">'center'</span>,<span class="at">full_width=</span>F, <span class="at">fixed_thead=</span>T, <span class="at">bootstrap_options=</span><span class="st">'hover'</span>)</span>
-<span id="cb13-368"><a href="#cb13-368" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-369"><a href="#cb13-369" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-370"><a href="#cb13-370" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-358"><a href="#cb13-358" aria-hidden="true" tabindex="-1"></a>N_families <span class="ot">=</span> <span class="fu">n_distinct</span>(df<span class="sc">$</span>case_id)</span>
+<span id="cb13-359"><a href="#cb13-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-360"><a href="#cb13-360" aria-hidden="true" tabindex="-1"></a><span class="co"># creating attrition table by treatment</span></span>
+<span id="cb13-361"><a href="#cb13-361" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb13-362"><a href="#cb13-362" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(active_case) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-363"><a href="#cb13-363" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="st">`</span><span class="at">N families</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">n_distinct</span>(case_id),</span>
+<span id="cb13-364"><a href="#cb13-364" aria-hidden="true" tabindex="-1"></a>            <span class="st">`</span><span class="at">% of total sample</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>((<span class="st">`</span><span class="at">N families</span><span class="st">`</span><span class="sc">/</span>N_families)<span class="sc">*</span><span class="dv">100</span>, <span class="dv">1</span>),</span>
+<span id="cb13-365"><a href="#cb13-365" aria-hidden="true" tabindex="-1"></a>            <span class="at">.groups =</span> <span class="st">'keep'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-366"><a href="#cb13-366" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">active_case =</span> <span class="fu">ifelse</span>(active_case <span class="sc">==</span> <span class="dv">1</span>, <span class="st">'Yes'</span>, <span class="st">'No'</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-367"><a href="#cb13-367" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">`</span><span class="at">Active Case</span><span class="st">`</span><span class="ot">=</span> active_case) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-368"><a href="#cb13-368" aria-hidden="true" tabindex="-1"></a>  kbl <span class="sc">%&gt;%</span> </span>
+<span id="cb13-369"><a href="#cb13-369" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_minimal</span>(<span class="at">position=</span><span class="st">'center'</span>,<span class="at">full_width=</span>F, <span class="at">fixed_thead=</span>T, <span class="at">bootstrap_options=</span><span class="st">'hover'</span>)</span>
+<span id="cb13-370"><a href="#cb13-370" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-371"><a href="#cb13-371" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-372"><a href="#cb13-372" aria-hidden="true" tabindex="-1"></a>When looking at differential attrition, use an OLS multivariate regression or ordinary least-squares model to determine whether any particular variable has a meaningful relationship with attrition. The package *modelsummary* can be used for cleaner presentation of OLS models:</span>
+<span id="cb13-372"><a href="#cb13-372" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-373"><a href="#cb13-373" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-376"><a href="#cb13-376" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-377"><a href="#cb13-377" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: differential-attrition</span></span>
-<span id="cb13-378"><a href="#cb13-378" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Differential Attrition by Treatment &amp; Language"</span></span>
-<span id="cb13-379"><a href="#cb13-379" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("modelsummary")</span></span>
-<span id="cb13-380"><a href="#cb13-380" aria-hidden="true" tabindex="-1"></a><span class="co">#library(modelsummary)</span></span>
-<span id="cb13-381"><a href="#cb13-381" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-382"><a href="#cb13-382" aria-hidden="true" tabindex="-1"></a><span class="co"># Only looking at case level</span></span>
-<span id="cb13-383"><a href="#cb13-383" aria-hidden="true" tabindex="-1"></a>df_cases <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
-<span id="cb13-384"><a href="#cb13-384" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(case_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb13-385"><a href="#cb13-385" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-386"><a href="#cb13-386" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating Model</span></span>
-<span id="cb13-387"><a href="#cb13-387" aria-hidden="true" tabindex="-1"></a>attrit_model <span class="ot">=</span> <span class="fu">lm</span>(active_case <span class="sc">~</span> demonstration <span class="sc">+</span> language, <span class="at">data =</span> df_cases)</span>
-<span id="cb13-388"><a href="#cb13-388" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-389"><a href="#cb13-389" aria-hidden="true" tabindex="-1"></a><span class="co"># Presenting Model using Model Summary</span></span>
-<span id="cb13-390"><a href="#cb13-390" aria-hidden="true" tabindex="-1"></a><span class="fu">modelsummary</span>(<span class="fu">list</span>(<span class="st">'Active Case (pp)'</span><span class="ot">=</span>attrit_model),</span>
-<span id="cb13-391"><a href="#cb13-391" aria-hidden="true" tabindex="-1"></a>             <span class="at">stars=</span>T, <span class="co"># significance stars</span></span>
-<span id="cb13-392"><a href="#cb13-392" aria-hidden="true" tabindex="-1"></a>             <span class="at">fmt =</span> <span class="cf">function</span>(x)<span class="fu">round</span>(x<span class="sc">*</span><span class="dv">100</span>,<span class="dv">2</span>), <span class="co"># formatting both coefficients &amp; standard errors to appear as percents</span></span>
-<span id="cb13-393"><a href="#cb13-393" aria-hidden="true" tabindex="-1"></a>             <span class="at">coef_map =</span> <span class="fu">c</span>(</span>
-<span id="cb13-394"><a href="#cb13-394" aria-hidden="true" tabindex="-1"></a>               <span class="st">"demonstrationmessage_vers_two"</span> <span class="ot">=</span> <span class="st">"Message Version Two"</span>,</span>
-<span id="cb13-395"><a href="#cb13-395" aria-hidden="true" tabindex="-1"></a>               <span class="st">"demonstrationcontrol"</span> <span class="ot">=</span> <span class="st">"Control"</span>,</span>
-<span id="cb13-396"><a href="#cb13-396" aria-hidden="true" tabindex="-1"></a>               <span class="st">"languageMandarin"</span> <span class="ot">=</span> <span class="st">"Language: Mandarin"</span>,</span>
-<span id="cb13-397"><a href="#cb13-397" aria-hidden="true" tabindex="-1"></a>               <span class="st">"languageRussian"</span> <span class="ot">=</span> <span class="st">"Language: Russian"</span>, </span>
-<span id="cb13-398"><a href="#cb13-398" aria-hidden="true" tabindex="-1"></a>               <span class="st">"languageSpanish"</span> <span class="ot">=</span> <span class="st">"Language: Spanish"</span>,</span>
-<span id="cb13-399"><a href="#cb13-399" aria-hidden="true" tabindex="-1"></a>               <span class="st">"(Intercept)"</span> <span class="ot">=</span> <span class="st">"Intercept"</span>),</span>
-<span id="cb13-400"><a href="#cb13-400" aria-hidden="true" tabindex="-1"></a>             <span class="at">statistic =</span> <span class="st">'Std.Error: ({std.error})'</span>,</span>
-<span id="cb13-401"><a href="#cb13-401" aria-hidden="true" tabindex="-1"></a>             <span class="at">output =</span> <span class="st">'kableExtra'</span>,</span>
-<span id="cb13-402"><a href="#cb13-402" aria-hidden="true" tabindex="-1"></a>             <span class="at">gof_omit =</span> <span class="st">'AIC|BIC|F|Log.Lik.|Std.Errors'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-403"><a href="#cb13-403" aria-hidden="true" tabindex="-1"></a>  <span class="fu">footnote</span>(<span class="at">general =</span> <span class="st">'Reference group is demonstration version one, language: english. Coefficients and std.errors multiplied by 100 and presented as percents'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-404"><a href="#cb13-404" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_minimal</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb13-405"><a href="#cb13-405" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">12</span>,<span class="dv">2</span>), <span class="at">bold=</span>T, <span class="at">background =</span> <span class="st">'#ffffbf'</span>)</span>
-<span id="cb13-406"><a href="#cb13-406" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-407"><a href="#cb13-407" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-374"><a href="#cb13-374" aria-hidden="true" tabindex="-1"></a>When looking at differential attrition, use an OLS multivariate regression or ordinary least-squares model to determine whether any particular variable has a meaningful relationship with attrition. The package *modelsummary* can be used for cleaner presentation of OLS models:</span>
+<span id="cb13-375"><a href="#cb13-375" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-378"><a href="#cb13-378" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-379"><a href="#cb13-379" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: differential-attrition</span></span>
+<span id="cb13-380"><a href="#cb13-380" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Differential Attrition by Treatment &amp; Language"</span></span>
+<span id="cb13-381"><a href="#cb13-381" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("modelsummary")</span></span>
+<span id="cb13-382"><a href="#cb13-382" aria-hidden="true" tabindex="-1"></a><span class="co">#library(modelsummary)</span></span>
+<span id="cb13-383"><a href="#cb13-383" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-384"><a href="#cb13-384" aria-hidden="true" tabindex="-1"></a><span class="co"># Only looking at case level</span></span>
+<span id="cb13-385"><a href="#cb13-385" aria-hidden="true" tabindex="-1"></a>df_cases <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb13-386"><a href="#cb13-386" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(case_id, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb13-387"><a href="#cb13-387" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-388"><a href="#cb13-388" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating Model</span></span>
+<span id="cb13-389"><a href="#cb13-389" aria-hidden="true" tabindex="-1"></a>attrit_model <span class="ot">=</span> <span class="fu">lm</span>(active_case <span class="sc">~</span> demonstration <span class="sc">+</span> language, <span class="at">data =</span> df_cases)</span>
+<span id="cb13-390"><a href="#cb13-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-391"><a href="#cb13-391" aria-hidden="true" tabindex="-1"></a><span class="co"># Presenting Model using Model Summary</span></span>
+<span id="cb13-392"><a href="#cb13-392" aria-hidden="true" tabindex="-1"></a><span class="fu">modelsummary</span>(<span class="fu">list</span>(<span class="st">'Active Case (pp)'</span><span class="ot">=</span>attrit_model),</span>
+<span id="cb13-393"><a href="#cb13-393" aria-hidden="true" tabindex="-1"></a>             <span class="at">stars=</span>T, <span class="co"># significance stars</span></span>
+<span id="cb13-394"><a href="#cb13-394" aria-hidden="true" tabindex="-1"></a>             <span class="at">fmt =</span> <span class="cf">function</span>(x)<span class="fu">round</span>(x<span class="sc">*</span><span class="dv">100</span>,<span class="dv">2</span>), <span class="co"># formatting both coefficients &amp; standard errors to appear as percents</span></span>
+<span id="cb13-395"><a href="#cb13-395" aria-hidden="true" tabindex="-1"></a>             <span class="at">coef_map =</span> <span class="fu">c</span>(</span>
+<span id="cb13-396"><a href="#cb13-396" aria-hidden="true" tabindex="-1"></a>               <span class="st">"demonstrationmessage_vers_two"</span> <span class="ot">=</span> <span class="st">"Message Version Two"</span>,</span>
+<span id="cb13-397"><a href="#cb13-397" aria-hidden="true" tabindex="-1"></a>               <span class="st">"demonstrationcontrol"</span> <span class="ot">=</span> <span class="st">"Control"</span>,</span>
+<span id="cb13-398"><a href="#cb13-398" aria-hidden="true" tabindex="-1"></a>               <span class="st">"languageMandarin"</span> <span class="ot">=</span> <span class="st">"Language: Mandarin"</span>,</span>
+<span id="cb13-399"><a href="#cb13-399" aria-hidden="true" tabindex="-1"></a>               <span class="st">"languageRussian"</span> <span class="ot">=</span> <span class="st">"Language: Russian"</span>, </span>
+<span id="cb13-400"><a href="#cb13-400" aria-hidden="true" tabindex="-1"></a>               <span class="st">"languageSpanish"</span> <span class="ot">=</span> <span class="st">"Language: Spanish"</span>,</span>
+<span id="cb13-401"><a href="#cb13-401" aria-hidden="true" tabindex="-1"></a>               <span class="st">"(Intercept)"</span> <span class="ot">=</span> <span class="st">"Intercept"</span>),</span>
+<span id="cb13-402"><a href="#cb13-402" aria-hidden="true" tabindex="-1"></a>             <span class="at">statistic =</span> <span class="st">'Std.Error: ({std.error})'</span>,</span>
+<span id="cb13-403"><a href="#cb13-403" aria-hidden="true" tabindex="-1"></a>             <span class="at">output =</span> <span class="st">'kableExtra'</span>,</span>
+<span id="cb13-404"><a href="#cb13-404" aria-hidden="true" tabindex="-1"></a>             <span class="at">gof_omit =</span> <span class="st">'AIC|BIC|F|Log.Lik.|Std.Errors'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-405"><a href="#cb13-405" aria-hidden="true" tabindex="-1"></a>  <span class="fu">footnote</span>(<span class="at">general =</span> <span class="st">'Reference group is demonstration version one, language: english. Coefficients and std.errors multiplied by 100 and presented as percents'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-406"><a href="#cb13-406" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_minimal</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb13-407"><a href="#cb13-407" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">12</span>,<span class="dv">2</span>), <span class="at">bold=</span>T, <span class="at">background =</span> <span class="st">'#ffffbf'</span>)</span>
 <span id="cb13-408"><a href="#cb13-408" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-409"><a href="#cb13-409" aria-hidden="true" tabindex="-1"></a>In our dummy data, there are no differential rates of attrition. The experiment would be ready to carry out the analysis related to essential research questions.</span>
+<span id="cb13-409"><a href="#cb13-409" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-410"><a href="#cb13-410" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-411"><a href="#cb13-411" aria-hidden="true" tabindex="-1"></a><span class="fu">## Appendix</span></span>
+<span id="cb13-411"><a href="#cb13-411" aria-hidden="true" tabindex="-1"></a>In our dummy data, there are no differential rates of attrition. The experiment would be ready to carry out the analysis related to essential research questions.</span>
 <span id="cb13-412"><a href="#cb13-412" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-413"><a href="#cb13-413" aria-hidden="true" tabindex="-1"></a><span class="fu">### RCTs: Very Brief Review of Concepts</span></span>
+<span id="cb13-413"><a href="#cb13-413" aria-hidden="true" tabindex="-1"></a><span class="fu">## Appendix</span></span>
 <span id="cb13-414"><a href="#cb13-414" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-415"><a href="#cb13-415" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Counterfactuals &amp; Causality</span></span>
+<span id="cb13-415"><a href="#cb13-415" aria-hidden="true" tabindex="-1"></a><span class="fu">### RCTs: Very Brief Review of Concepts</span></span>
 <span id="cb13-416"><a href="#cb13-416" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-417"><a href="#cb13-417" aria-hidden="true" tabindex="-1"></a>The power of an Randomized Control Trial (RCT) is that in theory systematic differences across the demonstration and control groups, whether observed in administrative data or unknown, will be equally represented across groups at a given time. The results for your demonstration group would not fully generalize to your control group.</span>
+<span id="cb13-417"><a href="#cb13-417" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Counterfactuals &amp; Causality</span></span>
 <span id="cb13-418"><a href="#cb13-418" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-419"><a href="#cb13-419" aria-hidden="true" tabindex="-1"></a>For more resources:</span>
+<span id="cb13-419"><a href="#cb13-419" aria-hidden="true" tabindex="-1"></a>The power of an Randomized Control Trial (RCT) is that in theory systematic differences across the demonstration and control groups, whether observed in administrative data or unknown, will be equally represented across groups at a given time. The results for your demonstration group would not fully generalize to your control group.</span>
 <span id="cb13-420"><a href="#cb13-420" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-421"><a href="#cb13-421" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Joaquin's brown bag presentation for a brief overview of counterfactuals, causality, and selection bias</span>
+<span id="cb13-421"><a href="#cb13-421" aria-hidden="true" tabindex="-1"></a>For more resources:</span>
 <span id="cb13-422"><a href="#cb13-422" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-423"><a href="#cb13-423" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>While focused on observational data &amp; matching, the '<span class="co">[</span><span class="ot">Crash course in potential outcomes</span><span class="co">](despite%20the%20post%20focus%20on%20observational%20matching)</span>' section in <span class="co">[</span><span class="ot">Andrew Heiss' post</span><span class="co">](https://www.andrewheiss.com/blog/2024/03/21/demystifying-ate-att-atu/#ref-MorganWinship:2014)</span> covers individual &amp; average effects and selection bias.</span>
+<span id="cb13-423"><a href="#cb13-423" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="sc">\[</span>*removed\]* for a brief overview of counterfactuals, causality, and selection bias</span>
 <span id="cb13-424"><a href="#cb13-424" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-425"><a href="#cb13-425" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>J-PAL has more extensive resources on the entire project lifecycle for <span class="co">[</span><span class="ot">randomized evaluations</span><span class="co">](https://www.povertyactionlab.org/resource/introduction-randomized-evaluations)</span></span>
+<span id="cb13-425"><a href="#cb13-425" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>While focused on observational data &amp; matching, the '<span class="co">[</span><span class="ot">Crash course in potential outcomes</span><span class="co">](despite%20the%20post%20focus%20on%20observational%20matching)</span>' section in <span class="co">[</span><span class="ot">Andrew Heiss' post</span><span class="co">](https://www.andrewheiss.com/blog/2024/03/21/demystifying-ate-att-atu/#ref-MorganWinship:2014)</span> covers individual &amp; average effects and selection bias.</span>
 <span id="cb13-426"><a href="#cb13-426" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-427"><a href="#cb13-427" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 'Nudging' Through Outreach</span></span>
+<span id="cb13-427"><a href="#cb13-427" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>J-PAL has more extensive resources on the entire project lifecycle for <span class="co">[</span><span class="ot">randomized evaluations</span><span class="co">](https://www.povertyactionlab.org/resource/introduction-randomized-evaluations)</span></span>
 <span id="cb13-428"><a href="#cb13-428" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-429"><a href="#cb13-429" aria-hidden="true" tabindex="-1"></a>RCTs where the demonstration group is texted or emailed to secure their accounts or apply for a program are nudges because they present a simple, predictable choice without introducing any new incentive - the benefits of securing their account or enrolling in CalFresh were already available to them.</span>
+<span id="cb13-429"><a href="#cb13-429" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 'Nudging' Through Outreach</span></span>
 <span id="cb13-430"><a href="#cb13-430" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-431"><a href="#cb13-431" aria-hidden="true" tabindex="-1"></a>For more resources:</span>
+<span id="cb13-431"><a href="#cb13-431" aria-hidden="true" tabindex="-1"></a>RCTs where the demonstration group is texted or emailed to secure their accounts or apply for a program are nudges because they present a simple, predictable choice without introducing any new incentive - the benefits of securing their account or enrolling in CalFresh were already available to them.</span>
 <span id="cb13-432"><a href="#cb13-432" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-433"><a href="#cb13-433" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">A meta-analysis</span><span class="co">](https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA18709)</span> of RCT nudges experiments across public agency produced and academic literature, and a comparison between these two types of research</span>
+<span id="cb13-433"><a href="#cb13-433" aria-hidden="true" tabindex="-1"></a>For more resources:</span>
 <span id="cb13-434"><a href="#cb13-434" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-435"><a href="#cb13-435" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The federal <span class="co">[</span><span class="ot">Office of Evaluation Sciences</span><span class="co">](https://oes.gsa.gov/work/)</span> includes analysis plan registrations and results for cross disciplinary research. Methods used can include RCTs with or without outreach nudges and quasi-experimental methodologies.</span>
+<span id="cb13-435"><a href="#cb13-435" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">A meta-analysis</span><span class="co">](https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA18709)</span> of RCT nudges experiments across public agency produced and academic literature, and a comparison between these two types of research</span>
 <span id="cb13-436"><a href="#cb13-436" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-437"><a href="#cb13-437" aria-hidden="true" tabindex="-1"></a><span class="fu">### Power Analysis: Other Methods</span></span>
+<span id="cb13-437"><a href="#cb13-437" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The federal <span class="co">[</span><span class="ot">Office of Evaluation Sciences</span><span class="co">](https://oes.gsa.gov/work/)</span> includes analysis plan registrations and results for cross disciplinary research. Methods used can include RCTs with or without outreach nudges and quasi-experimental methodologies.</span>
 <span id="cb13-438"><a href="#cb13-438" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-439"><a href="#cb13-439" aria-hidden="true" tabindex="-1"></a>*Estimating Sample Size*</span>
+<span id="cb13-439"><a href="#cb13-439" aria-hidden="true" tabindex="-1"></a><span class="fu">### Power Analysis: Other Methods</span></span>
 <span id="cb13-440"><a href="#cb13-440" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-441"><a href="#cb13-441" aria-hidden="true" tabindex="-1"></a>If using a power analysis to estimate how large your sample should be, the main variable you need to estimate is *Cohen's d*, or the mean difference between groups divided by pooled standard deviation.</span>
+<span id="cb13-441"><a href="#cb13-441" aria-hidden="true" tabindex="-1"></a>*Estimating Sample Size*</span>
 <span id="cb13-442"><a href="#cb13-442" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-443"><a href="#cb13-443" aria-hidden="true" tabindex="-1"></a>Two options for this are relying on pilots or published literature. When it comes to nudge RCTs, we have both.</span>
+<span id="cb13-443"><a href="#cb13-443" aria-hidden="true" tabindex="-1"></a>If using a power analysis to estimate how large your sample should be, the main variable you need to estimate is *Cohen's d*, or the mean difference between groups divided by pooled standard deviation.</span>
 <span id="cb13-444"><a href="#cb13-444" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-445"><a href="#cb13-445" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*Relying on Literature*</span>
+<span id="cb13-445"><a href="#cb13-445" aria-hidden="true" tabindex="-1"></a>Two options for this are relying on pilots or published literature. When it comes to nudge RCTs, we have both.</span>
 <span id="cb13-446"><a href="#cb13-446" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-447"><a href="#cb13-447" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">RCTs to Scale: Comprehensive Evidence From Two Nudge Units (wiley.com)</span><span class="co">](https://onlinelibrary.wiley.com/doi/epdf/10.3982/ECTA18709)</span> conducts a meta-analysis of over 120 governmental 'nudge' RCTs, finding an unweighted impact of 0.014 (1.4%), a standard error of 0.3, and an average control group take-up of 17.3%.</span>
+<span id="cb13-447"><a href="#cb13-447" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*Relying on Literature*</span>
 <span id="cb13-448"><a href="#cb13-448" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-449"><a href="#cb13-449" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*In House Pilot Evaluations*</span>
+<span id="cb13-449"><a href="#cb13-449" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span><span class="co">[</span><span class="ot">RCTs to Scale: Comprehensive Evidence From Two Nudge Units (wiley.com)</span><span class="co">](https://onlinelibrary.wiley.com/doi/epdf/10.3982/ECTA18709)</span> conducts a meta-analysis of over 120 governmental 'nudge' RCTs, finding an unweighted impact of 0.014 (1.4%), a standard error of 0.3, and an average control group take-up of 17.3%.</span>
 <span id="cb13-450"><a href="#cb13-450" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-451"><a href="#cb13-451" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>The mean impact of messages on PIN Change via the EBT PIN change experiment was .01 (1%), pooled standard deviation was .107, and the rate of PIN change in the control group was .0027 (.27%).</span>
-<span id="cb13-452"><a href="#cb13-452" aria-hidden="true" tabindex="-1"></a><span class="ss">        -   </span>Depending on your experiment, you may want to use the mean impact and deviation of messages on theft.</span>
-<span id="cb13-453"><a href="#cb13-453" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-454"><a href="#cb13-454" aria-hidden="true" tabindex="-1"></a>Using this information and the *pwr* library, we could calculate sample size needed as follows:</span>
+<span id="cb13-451"><a href="#cb13-451" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*In House Pilot Evaluations*</span>
+<span id="cb13-452"><a href="#cb13-452" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-453"><a href="#cb13-453" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>The mean impact of messages on PIN Change via the EBT PIN change experiment was .01 (1%), pooled standard deviation was .107, and the rate of PIN change in the control group was .0027 (.27%).</span>
+<span id="cb13-454"><a href="#cb13-454" aria-hidden="true" tabindex="-1"></a><span class="ss">        -   </span>Depending on your experiment, you may want to use the mean impact and deviation of messages on theft.</span>
 <span id="cb13-455"><a href="#cb13-455" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-458"><a href="#cb13-458" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-459"><a href="#cb13-459" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: power-calc-est-sample</span></span>
-<span id="cb13-460"><a href="#cb13-460" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb13-461"><a href="#cb13-461" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-462"><a href="#cb13-462" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pwr) </span>
+<span id="cb13-456"><a href="#cb13-456" aria-hidden="true" tabindex="-1"></a>Using this information and the *pwr* library, we could calculate sample size needed as follows:</span>
+<span id="cb13-457"><a href="#cb13-457" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-460"><a href="#cb13-460" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-461"><a href="#cb13-461" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: power-calc-est-sample</span></span>
+<span id="cb13-462"><a href="#cb13-462" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
 <span id="cb13-463"><a href="#cb13-463" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-464"><a href="#cb13-464" aria-hidden="true" tabindex="-1"></a><span class="fu">power.prop.test</span>(<span class="co">#n = 114000, #solving for this</span></span>
-<span id="cb13-465"><a href="#cb13-465" aria-hidden="true" tabindex="-1"></a>                <span class="at">p1 =</span> <span class="fl">0.173</span>, <span class="co"># literature avg. control take-up</span></span>
-<span id="cb13-466"><a href="#cb13-466" aria-hidden="true" tabindex="-1"></a>                <span class="at">p2 =</span> <span class="fl">0.187</span>, <span class="co"># control + lit avg. impact </span></span>
-<span id="cb13-467"><a href="#cb13-467" aria-hidden="true" tabindex="-1"></a>                <span class="at">power =</span> <span class="fl">0.8</span>, <span class="co">#standard spec. to avoid false negative is .8</span></span>
-<span id="cb13-468"><a href="#cb13-468" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">"two.sided"</span>)  <span class="co">#two sided test is default</span></span>
-<span id="cb13-469"><a href="#cb13-469" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-470"><a href="#cb13-470" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-471"><a href="#cb13-471" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-464"><a href="#cb13-464" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pwr) </span>
+<span id="cb13-465"><a href="#cb13-465" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-466"><a href="#cb13-466" aria-hidden="true" tabindex="-1"></a><span class="fu">power.prop.test</span>(<span class="co">#n = 114000, #solving for this</span></span>
+<span id="cb13-467"><a href="#cb13-467" aria-hidden="true" tabindex="-1"></a>                <span class="at">p1 =</span> <span class="fl">0.173</span>, <span class="co"># literature avg. control take-up</span></span>
+<span id="cb13-468"><a href="#cb13-468" aria-hidden="true" tabindex="-1"></a>                <span class="at">p2 =</span> <span class="fl">0.187</span>, <span class="co"># control + lit avg. impact </span></span>
+<span id="cb13-469"><a href="#cb13-469" aria-hidden="true" tabindex="-1"></a>                <span class="at">power =</span> <span class="fl">0.8</span>, <span class="co">#standard spec. to avoid false negative is .8</span></span>
+<span id="cb13-470"><a href="#cb13-470" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">"two.sided"</span>)  <span class="co">#two sided test is default</span></span>
+<span id="cb13-471"><a href="#cb13-471" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-472"><a href="#cb13-472" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-473"><a href="#cb13-473" aria-hidden="true" tabindex="-1"></a>The above example uses the meta analyses figures and determines you need at least 11,821 observations in *each group*. If you wanted to use your pilot study or did not have a reliable estimate from the literature, you would change p1 and p2 accordingly.</span>
+<span id="cb13-473"><a href="#cb13-473" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-474"><a href="#cb13-474" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-475"><a href="#cb13-475" aria-hidden="true" tabindex="-1"></a>For conceptual guidance, see J-PAL's guidance, <span class="co">[</span><span class="ot">particularly the definitions and Table 1</span><span class="co">](https://www.povertyactionlab.org/resource/power-calculations)</span>. On <span class="co">[</span><span class="ot">Github</span><span class="co">](https://github.com/J-PAL/Sample_Size_and_Power)</span> J-PAL also has R and STATA functions to calculate minimum sample size needed given a Minimum Detectable Effect using simulation.</span>
+<span id="cb13-475"><a href="#cb13-475" aria-hidden="true" tabindex="-1"></a>The above example uses the meta analyses figures and determines you need at least 11,821 observations in *each group*. If you wanted to use your pilot study or did not have a reliable estimate from the literature, you would change p1 and p2 accordingly.</span>
+<span id="cb13-476"><a href="#cb13-476" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-477"><a href="#cb13-477" aria-hidden="true" tabindex="-1"></a>For conceptual guidance, see J-PAL's guidance, <span class="co">[</span><span class="ot">particularly the definitions and Table 1</span><span class="co">](https://www.povertyactionlab.org/resource/power-calculations)</span>. On <span class="co">[</span><span class="ot">Github</span><span class="co">](https://github.com/J-PAL/Sample_Size_and_Power)</span> J-PAL also has R and STATA functions to calculate minimum sample size needed given a Minimum Detectable Effect using simulation.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -1,5 +1,5 @@
 ---
-title: "Exploring the Blog'o'sphere"
+title: "Exploring Quarto Blogs"
 author: "Eric Schroer"
 date: "2024-06-14"
 categories: [news] 
@@ -7,4 +7,4 @@ categories: [news]
 
 This is the first post in a Quarto blog. Welcome!
 
-![digital jungle knowing owl](digital_jungle_knowing_owl.jpg)
+![digital jungle owl](digital_jungle_knowing_owl.jpg)

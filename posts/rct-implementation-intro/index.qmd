@@ -25,6 +25,8 @@ The following covers how to implement aspects of RCT randomization projects, bot
 
 This does not cover statistical concepts in detail nor how to conduct an RCT from start to finish, though this references some resources that do so.
 
+***This version removes any drive folders or SharePoint links, only posting dummy data, dummy code, and publicly available resources***.
+
 ## Pre-Intervention
 
 ### **Creating an Outreach & Analysis Plan**
@@ -53,7 +55,7 @@ RCT outreach projects should at minimum clearly identify the following from the 
 
 3.  Outreach content (if applicable)
 
-Despite covering power analysis, randomization procedure, and other sensitivity tests, this guidance is not a detailed how-to guide for analysis & outreach plans. For more guidance on analysis & outreach plans see the EBT PIN Change Outreach Plan example.
+Despite covering power analysis, randomization procedure, and other sensitivity tests, this guidance is not a detailed how-to guide for analysis & outreach plans. For more guidance on analysis & outreach plans see the \[*removed\]*.
 
 ### Implementing Power Analysis in R
 
@@ -83,7 +85,7 @@ power.prop.test(n = 114000, #sample size per group
 
 You determine MDE by taking the difference of p2 (computed by *power.prop.test*) & p1 (you provided). In this case, the MDE is roughly .19 pp change.
 
-If you have multiple research questions, you may need to calculate power for each questions. See the Power Analysis section of the EBT PIN Change Outreach Planning for an example.
+If you have multiple research questions, you may need to calculate power for each questions. See the Power Analysis section of the \[*removed\]*.
 
 If you need to rely on the literature to determine the likely prevalence of your outcome of interest at baseline, see the *Appendix*.
 
@@ -255,9 +257,9 @@ df$demonstration <- randomizr::block_and_cluster_ra(clusters = df$case_id,
 
 -   **Phase-in** or **Step-wedge**: If you are providing the demonstration to *everyone* but staggering the timing by which the control group receives the demonstration or treatment, you would follow the exact *block_and_cluster_ra* function as above.
 
-    -   See \\\\Cdss6psas2\\RADD\\Fraud\\Projects\\PIN Change Outreach Experiment\\code\\04_Sample_Randomization.R for an example of multiple treatment arm phased in *block_and_cluster_ra* script
+    -   See \[*removed\]* for an example of multiple treatment arm phased in *block_and_cluster_ra* script
 
-    -   See Joaquin's brown bag presentation on causal inference for more background on this design.
+    -   See \[*removed\]* on causal inference for more background on this design.
 
 ### Balance Testing
 
@@ -400,7 +402,7 @@ The power of an Randomized Control Trial (RCT) is that in theory systematic diff
 
 For more resources:
 
--   Joaquin's brown bag presentation for a brief overview of counterfactuals, causality, and selection bias
+-   \[*removed\]* for a brief overview of counterfactuals, causality, and selection bias
 
 -   While focused on observational data & matching, the '[Crash course in potential outcomes](despite%20the%20post%20focus%20on%20observational%20matching)' section in [Andrew Heiss' post](https://www.andrewheiss.com/blog/2024/03/21/demystifying-ate-att-atu/#ref-MorganWinship:2014) covers individual & average effects and selection bias.
 

@@ -649,11 +649,7 @@ Notes:              ***Significant at the 1 percent level.
 <li>
 <p><em>In House Pilot Evaluations</em></p>
 <ul>
-<li>The mean impact of messages on PIN Change via the EBT PIN change experiment was .01 (1%), pooled standard deviation was .107, and the rate of PIN change in the control group was .0027 (.27%).
-<ul>
-<li>Depending on your experiment, you may want to use the mean impact and deviation of messages on theft.</li>
-</ul>
-</li>
+<li>The mean impact of [<em>removed]</em>…</li>
 </ul>
 </li>
 </ul>
@@ -1307,29 +1303,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-450"><a href="#cb13-450" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-451"><a href="#cb13-451" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*In House Pilot Evaluations*</span>
 <span id="cb13-452"><a href="#cb13-452" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-453"><a href="#cb13-453" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>The mean impact of messages on PIN Change via the EBT PIN change experiment was .01 (1%), pooled standard deviation was .107, and the rate of PIN change in the control group was .0027 (.27%).</span>
-<span id="cb13-454"><a href="#cb13-454" aria-hidden="true" tabindex="-1"></a><span class="ss">        -   </span>Depending on your experiment, you may want to use the mean impact and deviation of messages on theft.</span>
-<span id="cb13-455"><a href="#cb13-455" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-456"><a href="#cb13-456" aria-hidden="true" tabindex="-1"></a>Using this information and the *pwr* library, we could calculate sample size needed as follows:</span>
-<span id="cb13-457"><a href="#cb13-457" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-460"><a href="#cb13-460" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-461"><a href="#cb13-461" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: power-calc-est-sample</span></span>
-<span id="cb13-462"><a href="#cb13-462" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb13-463"><a href="#cb13-463" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-464"><a href="#cb13-464" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pwr) </span>
-<span id="cb13-465"><a href="#cb13-465" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-466"><a href="#cb13-466" aria-hidden="true" tabindex="-1"></a><span class="fu">power.prop.test</span>(<span class="co">#n = 114000, #solving for this</span></span>
-<span id="cb13-467"><a href="#cb13-467" aria-hidden="true" tabindex="-1"></a>                <span class="at">p1 =</span> <span class="fl">0.173</span>, <span class="co"># literature avg. control take-up</span></span>
-<span id="cb13-468"><a href="#cb13-468" aria-hidden="true" tabindex="-1"></a>                <span class="at">p2 =</span> <span class="fl">0.187</span>, <span class="co"># control + lit avg. impact </span></span>
-<span id="cb13-469"><a href="#cb13-469" aria-hidden="true" tabindex="-1"></a>                <span class="at">power =</span> <span class="fl">0.8</span>, <span class="co">#standard spec. to avoid false negative is .8</span></span>
-<span id="cb13-470"><a href="#cb13-470" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">"two.sided"</span>)  <span class="co">#two sided test is default</span></span>
+<span id="cb13-453"><a href="#cb13-453" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>The mean impact of <span class="sc">\[</span>*removed\]*...</span>
+<span id="cb13-454"><a href="#cb13-454" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-455"><a href="#cb13-455" aria-hidden="true" tabindex="-1"></a>Using this information and the *pwr* library, we could calculate sample size needed as follows:</span>
+<span id="cb13-456"><a href="#cb13-456" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-459"><a href="#cb13-459" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-460"><a href="#cb13-460" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: power-calc-est-sample</span></span>
+<span id="cb13-461"><a href="#cb13-461" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb13-462"><a href="#cb13-462" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-463"><a href="#cb13-463" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pwr) </span>
+<span id="cb13-464"><a href="#cb13-464" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-465"><a href="#cb13-465" aria-hidden="true" tabindex="-1"></a><span class="fu">power.prop.test</span>(<span class="co">#n = 114000, #solving for this</span></span>
+<span id="cb13-466"><a href="#cb13-466" aria-hidden="true" tabindex="-1"></a>                <span class="at">p1 =</span> <span class="fl">0.173</span>, <span class="co"># literature avg. control take-up</span></span>
+<span id="cb13-467"><a href="#cb13-467" aria-hidden="true" tabindex="-1"></a>                <span class="at">p2 =</span> <span class="fl">0.187</span>, <span class="co"># control + lit avg. impact </span></span>
+<span id="cb13-468"><a href="#cb13-468" aria-hidden="true" tabindex="-1"></a>                <span class="at">power =</span> <span class="fl">0.8</span>, <span class="co">#standard spec. to avoid false negative is .8</span></span>
+<span id="cb13-469"><a href="#cb13-469" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">"two.sided"</span>)  <span class="co">#two sided test is default</span></span>
+<span id="cb13-470"><a href="#cb13-470" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-471"><a href="#cb13-471" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-472"><a href="#cb13-472" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-473"><a href="#cb13-473" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-474"><a href="#cb13-474" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-475"><a href="#cb13-475" aria-hidden="true" tabindex="-1"></a>The above example uses the meta analyses figures and determines you need at least 11,821 observations in *each group*. If you wanted to use your pilot study or did not have a reliable estimate from the literature, you would change p1 and p2 accordingly.</span>
-<span id="cb13-476"><a href="#cb13-476" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-477"><a href="#cb13-477" aria-hidden="true" tabindex="-1"></a>For conceptual guidance, see J-PAL's guidance, <span class="co">[</span><span class="ot">particularly the definitions and Table 1</span><span class="co">](https://www.povertyactionlab.org/resource/power-calculations)</span>. On <span class="co">[</span><span class="ot">Github</span><span class="co">](https://github.com/J-PAL/Sample_Size_and_Power)</span> J-PAL also has R and STATA functions to calculate minimum sample size needed given a Minimum Detectable Effect using simulation.</span>
+<span id="cb13-472"><a href="#cb13-472" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-473"><a href="#cb13-473" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-474"><a href="#cb13-474" aria-hidden="true" tabindex="-1"></a>The above example uses the meta analyses figures and determines you need at least 11,821 observations in *each group*. If you wanted to use your pilot study or did not have a reliable estimate from the literature, you would change p1 and p2 accordingly.</span>
+<span id="cb13-475"><a href="#cb13-475" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-476"><a href="#cb13-476" aria-hidden="true" tabindex="-1"></a>For conceptual guidance, see J-PAL's guidance, <span class="co">[</span><span class="ot">particularly the definitions and Table 1</span><span class="co">](https://www.povertyactionlab.org/resource/power-calculations)</span>. On <span class="co">[</span><span class="ot">Github</span><span class="co">](https://github.com/J-PAL/Sample_Size_and_Power)</span> J-PAL also has R and STATA functions to calculate minimum sample size needed given a Minimum Detectable Effect using simulation.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

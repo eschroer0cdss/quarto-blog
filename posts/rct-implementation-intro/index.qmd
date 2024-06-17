@@ -432,8 +432,7 @@ Two options for this are relying on pilots or published literature. When it come
 
 -   *In House Pilot Evaluations*
 
-    -   The mean impact of messages on PIN Change via the EBT PIN change experiment was .01 (1%), pooled standard deviation was .107, and the rate of PIN change in the control group was .0027 (.27%).
-        -   Depending on your experiment, you may want to use the mean impact and deviation of messages on theft.
+    -   The mean impact of \[*removed\]*...
 
 Using this information and the *pwr* library, we could calculate sample size needed as follows:
 
